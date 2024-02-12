@@ -3,7 +3,7 @@
 #include "fila_dinamica.h"
 #include "lista_dinamica.h"
 #include "pilha_dinamica.h"
-
+#include "main.h"
 struct hand{
 
 };
@@ -22,6 +22,6 @@ struct players{
 
 int main()
 {
-    printf("Hello world!\n");
+    printf("Hello woaarld!\n");
     return 0;
 }
