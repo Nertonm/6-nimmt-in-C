@@ -1,10 +1,10 @@
 #include "main.h"
 
-typedef struct descritor * carreata;
+typedef struct descritor * fila;
 
-carreata * criar();
-int inserir(carreata *, struct carta);
-int remover(carreata *, struct carta *);
-int acessar(carreata *, struct carta *);
-int exibir(carreata *);
-int tamanho(carreata *);
+fila * criar();
+int inserir(fila *, struct carta);
+int remover(fila *, struct carta *);
+int acessar(fila *, struct carta *);
+int exibir(fila *);
+int tamanho(fila *);
