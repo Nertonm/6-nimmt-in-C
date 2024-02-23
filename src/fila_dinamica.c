@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fila_dinamica.h"
+#include "carta.h"
 
-/* Movido para header */
 
 struct elemento {
     carta data;
-    struct elemento *proximo;
+    struct elemento *prox;
 };
 
-struct descritor {
+struct fila{// Descritor
     struct elemento *ini;
     struct elemento *fim;
     int quantidade;
