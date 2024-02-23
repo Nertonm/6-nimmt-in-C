@@ -1,5 +1,4 @@
-#include "main.h"
-#include "carta.h"
+#include "cartaStruct.h"
 
 typedef struct descritor * fila;
 

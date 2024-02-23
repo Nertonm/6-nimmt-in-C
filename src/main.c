@@ -4,7 +4,6 @@
 #include "lista_dinamica.h"
 #include "pilha_dinamica.h"
 #include "main.h"
-#include "carta.h"
 
 struct hand{
 
