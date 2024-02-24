@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1708726712 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
+1708816202 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
 
-1708726715 /home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.h
+1708726740 /home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.h
 	<stdio.h>
 	<stdlib.h>
 	"cartaStruct.h"
