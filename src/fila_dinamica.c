@@ -34,9 +34,9 @@ int inserir(fila link, carta info){
     link->fim = novo;
 };
 int remover(fila link){
-    fila aaa = link->ini;
+    fila aux = link->ini;
     link->ini = link->ini->prx;
-    free(aaa);
+    free(aux);
 };
 int acessar();
 int exibir();
