@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1708816202 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
+1708826961 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
 
 1708726740 /home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.h
@@ -12,7 +12,7 @@
 1708726168 /home/nerton/Documentos/6-nimmt-in-C/src/lista_dinamica.h
 	"cartaStruct.h"
 
-1708725517 source:/home/nerton/Documentos/6-nimmt-in-C/src/main.c
+1708826545 source:/home/nerton/Documentos/6-nimmt-in-C/src/main.c
 	"main.h"
 
 1708726166 /home/nerton/Documentos/6-nimmt-in-C/src/pilha_dinamica.h
