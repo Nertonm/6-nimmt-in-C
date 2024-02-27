@@ -9,16 +9,16 @@ struct elemento {
     
 typedef struct elemento Elemento;
 
-Pilha* criarp(){
+Pilha* pilhaCriar(void){
     Pilha *baralho;
-    baralho=(Pilha*}malloc(sizeof(Pilha));
-    if (baralho!=NULL){
-        *baralho=NULL;
+    baralho = (Pilha*}malloc(sizeof(Pilha));
+    if (baralho != NULL){
+        *baralho = NULL;
     }
     return baralho;
 }
 
-int inserirp(Pilha *baralho,struct carta novosdad){
+int pilhaInserir(Pilha *baralho, struct carta novosdad){
     if(baralho==NULL){
         return 0;
     }
@@ -31,19 +31,19 @@ int inserirp(Pilha *baralho,struct carta novosdad){
     }
 }
 
-int removerp(Pilha *baralho){
-    if (baralho==NULL)return 0;
-    if (*baralho==NULL) return 0;
+int pilhaRemover(Pilha *baralho){
+    if (baralho == NULL) return 0;
+    //if (*baralho == NULL) return 0; Mexi aqui 
     else {
         Elemento *aux *baralho;
-        *baralho=aux->prox;
+        *baralho = aux->prox;
         free(aux);
         return 1;
     }
 }
 
-int tamamhop(Pilha *baralho){
-    if (baralho==NULL){
+int pilhaTamamho(Pilha *baralho){
+    if (baralho == NULL){
         return -1;
     }
     return baralho->qtd;
