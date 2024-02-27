@@ -34,23 +34,21 @@ int pilhaInserir(Pilha baralho, carta nova){
     }
 }
 
-/*int pilhaRemover(Pilha baralho){
+int pilhaRemover(Pilha baralho){
     if (baralho == NULL) return 0;
-    //if (*baralho == NULL) return 0; Mexi aqui
+
     else {
-        Elemento aux;
+        Elemento *aux= baralho;
         baralho = aux->prx;
         free(aux);
         return 1;
     }
 }
-*/
+
 int pilhaTamamho(Pilha baralho){
     if (baralho == NULL){
         return 1;
     }
     return baralho->qtd;
 }
-
-
 
