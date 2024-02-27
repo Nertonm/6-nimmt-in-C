@@ -1,24 +1,36 @@
 # depslib dependency file v1.0
-1708826961 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
+1708999177 source:/home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
 
-1708726740 /home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.h
+1708998719 /home/nerton/Documentos/6-nimmt-in-C/src/fila_dinamica.h
 	<stdio.h>
 	<stdlib.h>
 	"cartaStruct.h"
 
-1708725267 source:/home/nerton/Documentos/6-nimmt-in-C/src/lista_dinamica.c
-
-1708726168 /home/nerton/Documentos/6-nimmt-in-C/src/lista_dinamica.h
+1708999081 source:/home/nerton/Documentos/6-nimmt-in-C/src/lista_dinamica.c
+	<stdlib.h>
+	"lista_dinamica.h"
 	"cartaStruct.h"
+	<stdio.h>
 
-1708826545 source:/home/nerton/Documentos/6-nimmt-in-C/src/main.c
+1708998112 /home/nerton/Documentos/6-nimmt-in-C/src/lista_dinamica.h
+	"cartaStruct.h"
+	<stdio.h>
+	<stdlib.h>
+
+1708999004 source:/home/nerton/Documentos/6-nimmt-in-C/src/main.c
 	"main.h"
 
-1708726166 /home/nerton/Documentos/6-nimmt-in-C/src/pilha_dinamica.h
+1708998385 /home/nerton/Documentos/6-nimmt-in-C/src/pilha_dinamica.h
 	"cartaStruct.h"
+	<stdio.h>
+	<stdlib.h>
 
-1708725267 source:/home/nerton/Documentos/6-nimmt-in-C/src/pilha_dinamica.c
+1708998602 source:/home/nerton/Documentos/6-nimmt-in-C/src/pilha_dinamica.c
+	<stdlib.h>
+	"cartaStruct.h"
+	"pilha_dinamica.h"
+	<stdio.h>
 
 1708726092 /home/nerton/Documentos/6-nimmt-in-C/src/main.h
 	<stdio.h>
@@ -29,5 +41,5 @@
 
 1708725059 /home/nerton/Documentos/6-nimmt-in-C/src/carta.h
 
-1708726147 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
+1708827326 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
 

@@ -9,9 +9,15 @@ struct descritor{
     struct elemento *fim;
     int qnt;
 };*/
+struct elemento{
+    carta data;
+    struct elemento *prx;
+};
+typedef struct elemento *Elemento;
 
-fila* criar(void){
-    fila nova = (fila)malloc(sizeof(struct descritor));
+
+Fila filaCriar(void){
+    Fila nova = (Fila)malloc(sizeof(struct descritor));
     if (nova){
         nova->fim = NULL;
         nova->ini = NULL;
@@ -21,7 +27,7 @@ fila* criar(void){
     printf("Erro ao Criar Fila");
     return NULL;
 };
-int inserir(fila link, carta info){
+int filaInserir(Fila link, carta info){
     struct elemento* novo = (struct elemento *)malloc(sizeof(struct elemento));
     novo->data = info;
     if (link->ini){
@@ -35,21 +41,21 @@ int inserir(fila link, carta info){
     link->qnt++;
     return 0;
 };
-int remover(fila link){
-    fila aux = link->ini;
+int filaRemover(Fila link){
+    Elemento aux = link->ini;
     link->ini = link->ini->prx;
     link->qnt--;
     free(aux);
     return 0;
 };
-int acessar();
+int filaAcessar();
 
-int exibir(fila link){
+int filaExibir(Fila link){
     struct elemento* aux = link->ini;
     while(aux != link->fim){
-        printf("%i",aux->data);
+       // printf("%i",);
         aux = aux->prx;
     }
     return 0;
 };
-int tamanho();
+int filaTamanho();

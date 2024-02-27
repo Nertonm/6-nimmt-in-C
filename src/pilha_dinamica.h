@@ -5,14 +5,14 @@
 
 typedef struct elemento* Pilha;
 
-Pilha* criarp();
+Pilha pilhaCriar();
 
-int inserirp(Pilha*, struct card);
+int pilhaInserir(Pilha link, carta nova);
 
-int removerp(Pilha*, struct card);
+int pilhaRemover(Pilha link);
 
-void embaralharp(Pilha*);
+void pilhaEmbaralhar(Pilha link);
 
-int tamamhop (Pilha*);
+int pilhaTamamho(Pilha link);
 
 

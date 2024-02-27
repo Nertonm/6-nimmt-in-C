@@ -4,24 +4,26 @@
 #include <stdio.h>
 
 struct elemento {
-    struct carta dados;
-    struct elemento *proximo;
+    struct card data;
+    struct elemento *prx;
 };
 typedef struct elemento Elemento;
 
-Lista* criar(){
-    Lista *mao; //baralho das cartas//
-    mao = (Lista*)malloc(sizeof(Lista));
-    if (mao!=NULL){
-        *mao=NULL;
+Lista criar(){
+    Lista mao; //baralho das cartas//
+    mao = (Elemento*)malloc(sizeof(Lista));
+    if (mao != NULL){
+        mao=NULL;
     }
     return mao;
 }
-int inserirOrdenado(Lista mao*, struct carta novosdados){
+
+/* inserirOrdenado(Lista mao, carta nova){
     if (mao==NULL) return 0;
     Elemento *novo = (Elemento*)malloc(sizeof(Elemento));
     if (novo==NULL) return 0;
-    novo->dados = novosdados;
-    #if (*mao==NULL || (*mao)->dados.
+    novo->data = nova;
+    //if (*mao==NULL || (*mao)->data.
+    // Terminar
     }
-
+*/

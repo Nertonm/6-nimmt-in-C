@@ -3,15 +3,15 @@
 #include <stdlib.h>
 
 
-typedef struct elementos *Lista;
+typedef struct elemento *Lista;
 
-Lista* criar();
+Lista listaCriar();
 
-int inserirOrdenado(Lista*, struct carta);
+int inserirOrdenado(Lista link,carta);
 
-int acessarIndice(Lista*, int,struct carta*);
+int acessarIndice(Lista link, int n ,carta);
 
-int removerIndince(Lista*,int);
+int removerIndince(Lista link, int n);
 
 int exibir(Lista*);
 
