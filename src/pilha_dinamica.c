@@ -53,24 +53,21 @@ int pilhaTamamho(Pilha baralho){
     return baralho->qtd;
 }
 
-
 void pilhaEmbaralhar(Pilha baralho){
 
     srand(time(NULL));
-
-    for(int i=0;i<104;i++){
-        rand()%104+1;
-        if(baralho==NULL)return 0;
+    for(int i=0;i<104;i++)
+    {
+        int rand = rand()%104+1;
+        if(baralho==NULL)
+            return 0;
         else{
              Elemento *aux=baralho+i;
              Elemento *aux2=rand;
              aux2=baralho+i;
              aux=rand;
-
         }
-
     }
-
-    }
+}
 
 
