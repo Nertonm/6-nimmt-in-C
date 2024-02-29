@@ -9,6 +9,7 @@ struct descritor{
     struct elemento *fim;
     int qnt;
 };*/
+
 struct elemento{
     carta data;
     struct elemento *prx;
@@ -58,4 +59,5 @@ int filaExibir(Fila link){
     }
     return 0;
 };
+
 int filaTamanho();
