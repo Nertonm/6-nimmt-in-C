@@ -44,7 +44,7 @@ This project is a C implementation of the popular card game 6-Nimmt, also known 
 
 **Contributing**
 
-This project was developed collaboratively with Luana, who contributed to:
+This project was developed collaboratively with [Luana](https://github.com/lua-teles), who contributed to:
 
 * **Game Logic Implementation:** Luana assisted in implementing the rules of 6-Nimmt, including card drawing logic, set creation, scoring, and game flow.
 * **Testing and Debugging:** Luana collaborated in testing and debugging the code, identifying and fixing bugs.
