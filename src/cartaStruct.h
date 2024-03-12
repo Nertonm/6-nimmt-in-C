@@ -9,7 +9,6 @@ struct card {
 
 typedef struct card carta;
 #endif
-
 /*
  E strutura da carta:                                                                                            
  - int numero, número que varia de 1 a 104
