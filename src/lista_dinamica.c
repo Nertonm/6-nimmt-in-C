@@ -3,27 +3,48 @@
 #include "cartaStruct.h"
 #include <stdio.h>
 
-struct elemento {
-    struct card data;
-    struct elemento *prx;
+struct elementoL {
+    carta Carta;
+    struct elementoL *prx;
 };
-typedef struct elemento Elemento;
+typedef struct elementoL ElementoL;
 
 Lista criar(){
     Lista mao; //baralho das cartas//
-    mao = (Elemento*)malloc(sizeof(Lista));
+    mao = (ElementoL*)malloc(sizeof(Lista));
     if (mao != NULL){
-        mao=NULL;
+        mao = NULL;
     }
     return mao;
 }
 
-/* inserirOrdenado(Lista mao, carta nova){
-    if (mao==NULL) return 0;
-    Elemento *novo = (Elemento*)malloc(sizeof(Elemento));
-    if (novo==NULL) return 0;
-    novo->data = nova;
-    //if (*mao==NULL || (*mao)->data.
-    // Terminar
+inserirOrdenado(Lista mao, struct carta Cartanova){
+
+    if (mao == NULL) return 0;
+
+    ElementoL *novo = (ElementoL*)malloc(sizeof(ElementoL));
+    if (novo == NULL) return 0;
+
+    novo->Carta = Cartanova;
+
+    if (*mao == NULL || (*mao) -> Carta.numero > novo -> Carta.numero){
+        novo -> prox = *mao;
+        *mao = novo;
     }
-*/
+
+    else {
+        ElementoL *ant = *mao;
+        ElementoL *aux = ant->prox;
+        while(aux != NULL && aux -> Carta.numero < novo -> Carta.numero){
+            ant=aux;
+            aux=aux->prox;
+        }
+        ant->prox=novo;
+        novo->prox=aux;
+    }
+    return 1;
+    }
+
+int acessarIndice(Lista *mao, int x, struct Carta *cart){
+
+    }
