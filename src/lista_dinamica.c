@@ -5,11 +5,11 @@
 
 struct elementoL {
     carta Carta;
-    struct elementoL *prx;
+    struct elemento *prx;
 };
 typedef struct elementoL ElementoL;
 
-Lista criar(){
+Lista listaCriar(){
     Lista mao; //baralho das cartas//
     mao = (ElementoL*)malloc(sizeof(Lista));
     if (mao != NULL){
@@ -43,8 +43,29 @@ inserirOrdenado(Lista mao, struct carta Cartanova){
         novo->prox=aux;
     }
     return 1;
-    }
+}
 
 int acessarIndice(Lista *mao, int x, struct Carta *cart){
-
+    if (mao==NULL || *mao==NULL) return 0;
+    
+    else if(x<0)
+            return 0;
+            
+    else{
+        int cont = 0;
+        ElementoL *aux= *mao;
+        while( aux !=NULL && x!=cont){
+            aux = aux->prx;
+            cont++;
+        }
+        
+        if (aux == NULL) return 0;
+        *cart = aux -> dados
+        return 1;
     }
+}
+
+
+int removerIndince(Lista *mao, int n, struct carta *Cartarem){
+    
+}
