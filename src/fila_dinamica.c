@@ -14,7 +14,7 @@ struct elemento{
     carta data;
     struct elemento *prx;
 };
-typedef struct elemento *Elemento;
+typedef struct elemento* Elemento;
 
 
 Fila filaCriar(void){
@@ -28,8 +28,9 @@ Fila filaCriar(void){
     printf("Erro ao Criar Fila");
     return NULL;
 };
-int filaInserir(Fila link, carta info){
-    struct elemento* novo = (struct elemento *)malloc(sizeof(struct elemento));
+
+int filaInserir(Fila link,carta info){
+    Elemento novo = (Elemento) malloc(sizeof(struct elemento));
     novo->data = info;
     if (link->ini){
         link->fim->prx = novo;
@@ -54,10 +55,12 @@ int filaAcessar();
 int filaExibir(Fila link){
     struct elemento* aux = link->ini;
     while(aux != link->fim){
-       // printf("%i",);
+        printf("%i",aux->data.numero);
         aux = aux->prx;
     }
     return 0;
 };
 
-int filaTamanho();
+int filaTamanho(Fila link){
+    return link->qnt;
+}
