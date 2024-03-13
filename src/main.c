@@ -16,7 +16,6 @@ struct mesa{
 };
 
 struct baralho{
-
 };
 
 struct players{
