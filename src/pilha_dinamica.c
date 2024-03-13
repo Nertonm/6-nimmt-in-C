@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 
-struct elementop{
+truct elementop{
     struct carta data;
     int qtd;
     struct elemento *prx;
@@ -22,25 +22,29 @@ Pilha pilhaCriar(){
     return baralho;
 }
 
-int pilhaInserir(Pilha *baralho, carta nova){
+int pilhaInserir(Pilha *baralho, struct carta newcard){
     if(baralho == NULL){
         return 0;
     }
     else {
         Elementop *novo= (Elementop*)malloc (sizeof(Elementop));
-        if (novo==NULL) return 0;
-        novo->data = nova;
-        novo->prx = baralho;
+
+        if (novo==NULL)return 0;
+
+        novo->data = newcard;
+        novo->prx = *baralho;
+        *baralho=novo;
         return 1;
     }
 }
 
-int pilhaRemover(Pilha baralho){
-    if (baralho == NULL) return 0;
+int pilhaRemover(Pilha *baralho,struct carta *remov){
+    if (baralho == NULL || *baralho==NULL) return 0;
 
     else {
-        Elementop *aux= baralho;
-        baralho = aux->prx;
+        Elementop *aux= *baralho;
+        *remov = aux->dados;
+        *baralho = aux->prx;
         free(aux);
         return 1;
     }
