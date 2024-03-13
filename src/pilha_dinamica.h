@@ -7,12 +7,12 @@ typedef struct elemento* Pilha;
 
 Pilha pilhaCriar();
 
-int pilhaInserir(Pilha link, carta nova);
+int pilhaInserir(Pilha *, struct card);
 
-int pilhaRemover(Pilha link);
+int pilhaRemover(Pilha *, struct card);
 
-void pilhaEmbaralhar(Pilha link);
+void pilhaEmbaralhar(Pilha *);
 
-int pilhaTamamho(Pilha link);
+int pilhaTamamho(Pilha *);
 
 
