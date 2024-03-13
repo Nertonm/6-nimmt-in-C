@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 
-typedef struct elemento* Pilha;
+typedef struct elementop* Pilha;
 
 Pilha pilhaCriar();
 
-int pilhaInserir(Pilha *, struct card);
+int pilhaInserir(Pilha *, struct carta);
 
-int pilhaRemover(Pilha *, struct card *);
+int pilhaRemover(Pilha *, struct carta*);
 
 void pilhaEmbaralhar(Pilha *);
 
