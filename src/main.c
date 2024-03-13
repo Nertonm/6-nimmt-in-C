@@ -12,7 +12,6 @@ struct hand{
 };
 
 struct mesa{
-
 };
 
 struct baralho{
