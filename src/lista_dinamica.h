@@ -7,12 +7,14 @@ typedef struct elemento *Lista;
 
 Lista listaCriar();
 
-int inserirOrdenado(Lista link,carta);
+int inserirOrdenado(Lista *, struct card);
 
-int acessarIndice(Lista link, int n ,carta);
+int acessarIndice(Lista *, int x , struct card);
 
-int removerIndince(Lista link, int n);
+int removerIndince(Lista *, int n);
 
 int exibir(Lista*);
 
 int quantidade(Lista*);
+
+int vazia()
