@@ -7,7 +7,7 @@
 struct elementop{
     struct carta data;
     int qtd;
-    struct elemento *prx;
+    struct elementop *prx;
 };
 
 typedef struct elementop Elementop;
