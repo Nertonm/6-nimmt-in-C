@@ -1,14 +1,6 @@
 #include "fila_dinamica.h"
-/*
-struct elemento{
-    carta data;
-    struct elemento *prx;
-};
-struct descritor{
-    struct elemento *ini;
-    struct elemento *fim;
-    int qnt;
-};*/
+#include "cartaStruct.h"
+#include "stdlib.h"
 
 struct elemento{
     carta data;

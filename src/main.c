@@ -1,4 +1,3 @@
-#include "main.h"
 /*
 Estruturas necessárias no main:
 - Mão (Lista *), sempre com cinco cartas: joga uma e compra uma

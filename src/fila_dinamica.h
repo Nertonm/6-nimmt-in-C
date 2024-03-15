@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "cartaStruct.h"
 
 struct descritor{
     struct elemento *ini;
