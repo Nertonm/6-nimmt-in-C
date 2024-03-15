@@ -17,7 +17,6 @@ int pilhaInserir(Pilha baralho, Carta insert){
                 baralho->qtd++;
                 return 1;
             }
-            return 0;
     }
     return 0;
 }
@@ -37,4 +36,9 @@ int pilhaTamamho(Pilha baralho){
 }
 
 void pilhaEmbaralhar(Pilha baralho){
+        int cartas = 104;
+        for (int i = 0; i < cartas - 1; i++){
+            nova = i + rand() / (104) /((cartas - i) + 1);
+            pilhaInserir();
+        }
 }
