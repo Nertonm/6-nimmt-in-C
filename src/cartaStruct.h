@@ -9,11 +9,11 @@
  - int jogador, número indicando o jogador dono da carta (útil quando for jogar as cartas e colocar nas coleções)
 */
 struct carta{
-    int numero;
-    int bois;
-    int jogador;
+    int num;
+    int boi;
+    int player;
 };
-typedef struct carta *Carta;
+typedef struct carta Carta;
 
 struct elemento{
     Carta data;

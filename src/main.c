@@ -26,6 +26,15 @@ struct players{
 
 int main()
 {
+    Fila aaa = filaCriar();
+    Carta bbb; bbb.num = 1;
+    Carta ccc; ccc.num = 2;
+    filaInserir(aaa,ccc);
+    filaInserir(aaa,bbb);
+    filaExibir(aaa);
+    Pilha ttt = pilhaCriar();
+    pilhaEmbaralhar(ttt);
+    filaExibir(ttt);
     // To Do
     // To Do
     // To Do
@@ -38,6 +47,6 @@ int main()
     // To Do
     // To Do
     // To Do
-    printf("Aa");
+//    printf("Aa");
     return 0;
 }

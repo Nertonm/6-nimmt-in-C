@@ -5,6 +5,7 @@ struct fila{
     Elemento fim;
     int qnt;
 };
+
 typedef struct fila* Fila;
 Fila filaCriar(void);
 int filaInserir();

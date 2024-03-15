@@ -1,7 +1,6 @@
 #include "fila_dinamica.h"
 #include "stdlib.h"
 
-
 Fila filaCriar(void){
     Fila nova = (Fila)malloc(sizeof(Fila));
     if (nova){
@@ -39,8 +38,8 @@ int filaAcessar();
 
 int filaExibir(Fila fila){
     Elemento aux = fila->ini;
-    while(aux != fila->fim){
-        printf("%i",aux->data.numero);
+    while(aux){
+        printf("%i\n",aux->data.num);
         aux = aux->prx;
     }
     return 0;

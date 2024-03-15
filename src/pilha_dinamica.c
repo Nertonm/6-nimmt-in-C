@@ -2,6 +2,7 @@
 
 Pilha pilhaCriar(){
     Pilha baralho = (Pilha)malloc(sizeof(Pilha));
+    baralho->qtd = 0;
     if (baralho)
         return baralho;
     return NULL;
@@ -23,7 +24,7 @@ int pilhaInserir(Pilha baralho, Carta insert){
 
 int pilhaRemover (Pilha baralho, Carta puxada){
     if (baralho){
-        Pilha aux = baralho->top;
+        Pilha aux; aux->top = baralho->top;
         baralho->top = baralho->top->prx;
         free(aux);
         return 1;
@@ -36,9 +37,19 @@ int pilhaTamamho(Pilha baralho){
 }
 
 void pilhaEmbaralhar(Pilha baralho){
-        int cartas = 104;
-        for (int i = 0; i < cartas - 1; i++){
-            nova = i + rand() / (104) /((cartas - i) + 1);
-            pilhaInserir();
-        }
+    int cartas = 104;
+    for (int i = 0; i < cartas; i++){
+        Carta aux; aux.num = i + 1;
+        pilhaInserir(baralho,aux);
+    }
+    Pilha aux = baralho, aux2 = baralho->top;
+    for (int i = 0; i < cartas; i++){
+            int random = rand()%(103)+1;
+            for (int j = 0; j < random; j++)
+                aux2 = aux2->top->prx;
+            Carta swp = aux->top->data;
+            aux->top->data = aux2->top->data;
+            aux2->top->data = swp;
+            // To do
+    }
 }

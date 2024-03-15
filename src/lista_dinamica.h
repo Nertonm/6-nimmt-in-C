@@ -5,6 +5,7 @@
 struct lista{
   Elemento ini;
   Elemento fim;
+  int qtd;
 };
 typedef struct lista* Lista;
 Lista listaCriar();
