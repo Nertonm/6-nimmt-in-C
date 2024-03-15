@@ -1,71 +1,33 @@
-#include <stdlib.h>
 #include "lista_dinamica.h"
-#include "cartaStruct.h"
-#include <stdio.h>
-
-struct elementoL {
-    carta Carta;
-    struct elemento *prx;
-};
-typedef struct elementoL ElementoL;
 
 Lista listaCriar(){
-    Lista mao; //baralho das cartas//
-    mao = (ElementoL*)malloc(sizeof(Lista));
-    if (mao != NULL){
-        mao = NULL;
+    Lista hand; //baralho das cartas//
+    hand = (Elemento)malloc(sizeof(Lista));
+    if (hand != NULL){
+        hand = NULL;
     }
-    return mao;
+    return hand;
 }
 
-inserirOrdenado(Lista mao, struct carta Cartanova){
-
-    if (mao == NULL) return 0;
-
-    ElementoL *novo = (ElementoL*)malloc(sizeof(ElementoL));
-    if (novo == NULL) return 0;
-
-    novo->Carta = Cartanova;
-
-    if (*mao == NULL || (*mao) -> Carta.numero > novo -> Carta.numero){
-        novo -> prox = *mao;
-        *mao = novo;
-    }
-
-    else {
-        ElementoL *ant = *mao;
-        ElementoL *aux = ant->prox;
-        while(aux != NULL && aux -> Carta.numero < novo -> Carta.numero){
-            ant=aux;
-            aux=aux->prox;
-        }
-        ant->prox=novo;
-        novo->prox=aux;
-    }
+inserirOrdenado(Lista hand,Carta nova){
+    Elemento inserir = (Elemento)malloc(sizeof(Elemento));
+    inserir->data = nova;
+    // To do
     return 1;
 }
 
-int acessarIndice(Lista *mao, int x, struct Carta *cart){
-    if (mao==NULL || *mao==NULL) return 0;
-    
-    else if(x<0)
-            return 0;
-            
-    else{
+int acessarIndice(Lista hand, int indice){
+    if (hand && indice > 0){
         int cont = 0;
-        ElementoL *aux= *mao;
-        while( aux !=NULL && x!=cont){
+        Elemento aux= hand->ini;
+        for (int i = 0; i < indice && aux->prx ; i++)
             aux = aux->prx;
-            cont++;
-        }
-        
-        if (aux == NULL) return 0;
-        *cart = aux -> dados
         return 1;
     }
+    //To do
+    return 0;
 }
 
-
-int removerIndince(Lista *mao, int n, struct carta *Cartarem){
-    
+int removerIndince(Lista hand, int indice){
+    //To do
 }

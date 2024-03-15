@@ -1,3 +1,5 @@
+#include "main.h"
+
 /*
 Estruturas necessárias no main:
 - Mão (Lista *), sempre com cinco cartas: joga uma e compra uma
@@ -6,24 +8,36 @@ Estruturas necessárias no main:
 - Coleção dos Jogadores (Lista **), vetor de Listas contendo as cartas adquiridas por cada jogador, use alocação dinâmica
 */
 
+// To Do
 struct hand{
 
 };
-
+// To Do
 struct mesa{
-};
 
+};
+// To Do
 struct baralho{
+
 };
-
+// To Do
 struct players{
-
 };
 
 int main()
 {
-
-
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
+    // To Do
     printf("Aa");
     return 0;
 }

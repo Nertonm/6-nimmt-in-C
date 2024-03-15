@@ -1,11 +1,11 @@
+#include "cartaStruct.h"
 
-struct descritor{
-    struct elemento *ini;
-    struct elemento *fim;
+struct fila{
+    Elemento ini;
+    Elemento fim;
     int qnt;
 };
-typedef struct descritor *Fila;
-
+typedef struct fila* Fila;
 Fila filaCriar(void);
 int filaInserir();
 int filaRemover();

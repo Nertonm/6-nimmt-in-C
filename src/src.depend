@@ -43,25 +43,38 @@
 
 1708827326 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
 
-1710470350 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
-	<stdlib.h>
+1710473871 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
 	"lista_dinamica.h"
-	"cartaStruct.h"
-	<stdio.h>
 
-1710470350 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
+1710473854 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
 	"cartaStruct.h"
 	<stdio.h>
 	<stdlib.h>
 
-1710470350 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
+1710473013 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
+	<stdio.h>
+	<stdlib.h>
 
-1710470475 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+1710474021 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+	"main.h"
 
-1710470756 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
+1710474150 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
-	"cartaStruct.h"
 	"stdlib.h"
 
-1710470638 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
+1710472703 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
+	"cartaStruct.h"
+
+1710474376 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.c
+	"pilha_dinamica.h"
+
+1710473879 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.h
+	"cartaStruct.h"
+
+1710470350 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.h
+	<stdio.h>
+	<stdlib.h>
+	"fila_dinamica.h"
+	"lista_dinamica.h"
+	"pilha_dinamica.h"
 

@@ -2,19 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-typedef struct elemento *Lista;
-
+struct lista{
+  Elemento ini;
+  Elemento fim;
+};
+typedef struct lista* Lista;
 Lista listaCriar();
-
-int inserirOrdenado(Lista *, struct card);
-
-int acessarIndice(Lista *, int x , struct card);
-
-int removerIndince(Lista *, int n);
-
-int exibir(Lista*);
-
-int quantidade(Lista*);
-
-int vazia()
+int inserirOrdenado(Lista, Carta);
+int acessarIndice(Lista, int);
+int removerIndince(Lista, int);
+int exibir(Lista);
+int quantidade(Lista);
+int vazia();
