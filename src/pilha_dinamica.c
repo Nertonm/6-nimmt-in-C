@@ -15,16 +15,18 @@ Pilha pilhaCriar(){
 }
 
 int pilhaInserir(Pilha baralho , carta newcard){
-    if (!baralho)
-        return 0;
-    else{
-            Elemento *novo= (Elemento*)malloc (sizeof(Elemento));
-            if (novo==NULL)return 0;
-            novo->data = newcard;
-            novo->prx = *baralho;
-            *baralho=novo;
-            return 1;
-        }
+    if (baralho){
+            Elemento novo = (Elemento)malloc(sizeof(Elemento));
+            if (novo){
+                novo->data = newcard;
+                novo->ant = baralho->top;
+                baralho->top = novo;
+                baralho->qtd++;
+                return 1;
+            }
+            return 0;
+    }
+    return 0;
 }
 
 int pilhaRemover(Pilha *baralho,struct carta *remov){
