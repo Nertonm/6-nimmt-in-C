@@ -17,10 +17,10 @@ This project is a C implementation of the popular card game 6-Nimmt, also known 
    git clone https://github.com/nertonm/6-nimmt-in-C.git
    ```
 
-2. **Navigate to the project directory:**
+2. **Navigate to the src project directory:**
 
    ```
-   cd 6-nimmt-in-C
+   cd 6-nimmt-in-C/src
    ```
 
 3. **Build the project:**
