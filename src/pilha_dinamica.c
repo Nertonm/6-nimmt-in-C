@@ -29,16 +29,14 @@ int pilhaInserir(Pilha baralho , carta newcard){
     return 0;
 }
 
-int pilhaRemover(Pilha *baralho,struct carta *remov){
-    if (baralho == NULL || *baralho==NULL) return 0;
-
-    else {
-        Elemento *aux= *baralho;
-        *remov = aux->dados;
-        *baralho = aux->prx;
+int pilhaRemover (Pilha baralho, carta puxada){
+    if (baralho){
+        Pilha aux = baralho->top;
+        baralho->top = baralho->top->ant;
         free(aux);
         return 1;
     }
+    return 0
 }
 
 int pilhaTamamho(Pilha baralho){
