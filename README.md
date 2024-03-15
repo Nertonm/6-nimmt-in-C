@@ -26,9 +26,8 @@ This project is a C implementation of the popular card game 6-Nimmt, also known 
 3. **Build the project:**
 
    ```
-   Use codeblocks
+   gcc -I ./ -o main *.c
    ```
-
 
 **Running the Game**
 
