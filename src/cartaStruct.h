@@ -16,7 +16,7 @@ struct carta{
 typedef struct carta Carta;
 
 struct elemento{
-    Carta data;
+    struct carta data;
     struct elemento *prx;
 };
 typedef struct elemento* Elemento;

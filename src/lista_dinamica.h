@@ -7,11 +7,10 @@ struct lista{
   Elemento fim;
   int qtd;
 };
-typedef struct lista* Lista;
-Lista listaCriar();
-int inserirOrdenado(Lista, Carta);
-int acessarIndice(Lista, int);
-int removerIndince(Lista, int);
-int exibir(Lista);
-int quantidade(Lista);
-int vazia();
+typedef struct lista Lista;
+Lista* listaCriar();
+int inserirOrdenado(Lista*, Carta);
+int acessarIndice(Lista*, int, Carta *);
+int removerIndince(Lista*, int);
+int exibir(Lista*);
+int quantidade(Lista*);
