@@ -27,5 +27,9 @@ int acessarIndice(Lista* hand, int indice, Carta* cartaa){
 }
 
 int removerIndince(Lista* hand, int indice){
-    //To do
+    Elemento aux = hand->ini;
+    for(int i = 1; i < indice && aux->prx; i++)
+            aux = aux->prx;
+    // To Do
+    free(aux->prx);
 }
