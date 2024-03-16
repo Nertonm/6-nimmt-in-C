@@ -26,7 +26,7 @@ struct players{
 
 int main()
 {
-    Fila aaa = filaCriar();
+    Fila* aaa = filaCriar();
     Carta bbb; bbb.num = 1;
     Carta ccc; ccc.num = 2;
     filaInserir(aaa,ccc);
@@ -34,7 +34,6 @@ int main()
     filaExibir(aaa);
     Pilha ttt = pilhaCriar();
     pilhaEmbaralhar(ttt);
-    filaExibir(ttt);
     // To Do
     // To Do
     // To Do

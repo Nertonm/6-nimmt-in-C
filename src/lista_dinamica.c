@@ -1,15 +1,13 @@
 #include "lista_dinamica.h"
 
 Lista listaCriar(){
-    Lista hand; //baralho das cartas//
-    hand = (Elemento)malloc(sizeof(Lista));
-    if (hand != NULL){
-        hand = NULL;
-    }
-    return hand;
+    Lista hand = (Lista)malloc(sizeof(Lista));
+    if (hand)
+        return hand;
+    return 0;
 }
 
-inserirOrdenado(Lista hand,Carta nova){
+int inserirOrdenado(Lista hand,Carta nova){
     Elemento inserir = (Elemento)malloc(sizeof(Elemento));
     inserir->data = nova;
     // To do
