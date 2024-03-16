@@ -1,14 +1,14 @@
 #include "pilha_dinamica.h"
 
-Pilha pilhaCriar(){
-    Pilha baralho = (Pilha)malloc(sizeof(Pilha));
+Pilha* pilhaCriar(){
+    Pilha* baralho = (Pilha*)malloc(sizeof(Pilha));
     baralho->qtd = 0;
     if (baralho)
         return baralho;
     return NULL;
 }
 
-int pilhaInserir(Pilha baralho, Carta insert){
+int pilhaInserir(Pilha* baralho, Carta insert){
     if (baralho){
             Elemento novo = (Elemento)malloc(sizeof(Elemento));
             if (novo){
@@ -22,9 +22,9 @@ int pilhaInserir(Pilha baralho, Carta insert){
     return 0;
 }
 
-int pilhaRemover (Pilha baralho, Carta puxada){
+int pilhaRemover (Pilha* baralho, Carta* puxada){
     if (baralho){
-        Pilha aux; aux->top = baralho->top;
+        Pilha* aux; aux->top = baralho->top;
         baralho->top = baralho->top->prx;
         free(aux);
         return 1;
@@ -32,11 +32,11 @@ int pilhaRemover (Pilha baralho, Carta puxada){
     return 0;
 }
 
-int pilhaTamamho(Pilha baralho){
+int pilhaTamamho(Pilha* baralho){
     return baralho->qtd;
 }
 
-void pilhaEmbaralhar(Pilha baralho){
+void pilhaEmbaralhar(Pilha* baralho){
     int cartas = 104;
     // Iniciar Baralho //
     for (int i = 0; i < cartas; i++){

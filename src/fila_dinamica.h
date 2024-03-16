@@ -7,9 +7,9 @@ struct fila{
 };
 
 typedef struct fila Fila;
-Fila* filaCriar(void);
+Fila* filaCriar();
 int filaInserir(Fila *, struct carta);
-int filaRemover(Fila *, struct carta);
-int filaAcessar(Fila *);
+int filaRemover(Fila *, Carta *);
+int filaAcessar(Fila *, Carta *);
 int filaExibir(Fila *);
 int filaTamanho(Fila *);

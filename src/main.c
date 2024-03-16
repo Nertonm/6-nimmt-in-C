@@ -32,8 +32,7 @@ int main()
     filaInserir(aaa,ccc);
     filaInserir(aaa,bbb);
     filaExibir(aaa);
-    Pilha ttt = pilhaCriar();
-    pilhaEmbaralhar(ttt);
+    //Pilha ttt = pilhaCriar();
     // To Do
     // To Do
     // To Do

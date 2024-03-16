@@ -27,7 +27,7 @@ int filaInserir(Fila* fila, Carta data){
     return 1;
 };
 
-int filaRemover(Fila* fila, Carta){
+int filaRemover(Fila* fila, Carta* card){
     Elemento aux = fila->ini;
     fila->ini = fila->ini->prx;
     fila->qtd--;
