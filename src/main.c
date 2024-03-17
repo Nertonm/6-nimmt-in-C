@@ -21,16 +21,6 @@ struct players{
 
 int main()
 {
-    // Declaração de Variaveis
-    int numBots = 2; /* Iniciado com Dois para situar o caso base do Select Players */
-/*
-    Fila* aaa = filaCriar();
-    Carta bbb; bbb.num = 1;
-    Carta ccc; ccc.num = 2;
-    filaInserir(aaa,ccc);
-    filaInserir(aaa,bbb);
-    filaExibir(aaa);
-*/
     printf(" #####                                 \n");
     printf("#     #    #    # # #    # #    # #####\n");
     printf("#          ##   # # ##  ## ##  ##   #  \n");
@@ -38,22 +28,30 @@ int main()
     printf("#     #    #  # # # #    # #    #   #  \n");
     printf("#     #    #   ## # #    # #    #   #  \n");
     printf(" #####     #    # # #    # #    #   #  \n");
-    // Select how many Players
-    do {
-        printf("====================================\n");
-        if (numBots < 2 || numBots > 9)
-            printf("|         Selecione Novamente      |\n");
-        printf("|         Quantos Jogadores?       |\n");
-        printf("====================================\n");
-        scanf("%i",&numBots);
-    }
-    while (numBots < 2 || numBots > 9);
     // Começando o Jogo
+        // Declaração de Variaveis
+            int numBots = 2; /* Iniciado com Dois para situar o caso base do Select Players */
+        // Selecionando o Numero de Jogadores
+            do {
+                printf("====================================\n");
+                if (numBots < 2 || numBots > 9)
+                    printf("|         Selecione Novamente      |\n");
+                printf("|         Quantos Jogadores?       |\n");
+                printf("====================================\n");
+                scanf("%i",&numBots);
+            }
+            while (numBots < 2 || numBots > 9);
         // Iniciado o Baralho dos Jogadores |TO DO|
-        for (int i = 0; i < numBots; i++){
+            // Denominando o tamanho do vetor em relação ao numero de players
+            Pilha baralhoJogadores[numBots];
+            // Criando o Monte Cartas na memoria e Embaralhando
+            Pilha* monteCartas = pilhaCriar();
+            pilhaEmbaralhar(monteCartas);
+            for (int i = 0; i < numBots; i++){
 
-        }
-    // Loop do Jogo c          |TO DO|
+            }
+
+    // Loop do Jogo           |TO DO|
         // Round Logic        |TO DO|
 
         // Contagem de Pontos |TO DO|

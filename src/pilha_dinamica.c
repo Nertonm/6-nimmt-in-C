@@ -38,11 +38,12 @@ int pilhaTamamho(Pilha* baralho){
 
 void pilhaEmbaralhar(Pilha* baralho){
     int cartas = 104;
-    // Iniciar Baralho //
+    // Iniciando o Baralho //
     for (int i = 0; i < cartas; i++){
         Carta aux; aux.num = i + 1;
         pilhaInserir(baralho,aux);
     }
+    // Embaralhando
     Elemento aux = baralho->top;
     for (int i = 0; i < cartas; i++){
             Elemento aux2 = baralho->top;

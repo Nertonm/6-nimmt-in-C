@@ -6,8 +6,8 @@ struct pilha{
 };
 typedef struct pilha Pilha;
 Pilha* pilhaCriar();
-int pilhaInserir(Pilha *, Carta);
-int pilhaRemover(Pilha *, Carta *);
+int pilhaInserir(Pilha *, struct carta);
+int pilhaRemover(Pilha *, struct carta *);
 void pilhaEmbaralhar(Pilha *);
 int pilhaTamamho(Pilha *);
 
