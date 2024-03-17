@@ -8,15 +8,12 @@ Estruturas necessárias no main:
 */
 // To Do
 struct hand{
-
 };
 // To Do
 struct mesa{
-
 };
 // To Do
 struct baralho{
-
 };
 // To Do
 struct players{
@@ -34,6 +31,13 @@ int main()
     filaInserir(aaa,bbb);
     filaExibir(aaa);
 */
+    printf(" #####                                 \n");
+    printf("#     #    #    # # #    # #    # #####\n");
+    printf("#          ##   # # ##  ## ##  ##   #  \n");
+    printf("######     # #  # # # ## # # ## #   #  \n");
+    printf("#     #    #  # # # #    # #    #   #  \n");
+    printf("#     #    #   ## # #    # #    #   #  \n");
+    printf(" #####     #    # # #    # #    #   #  \n");
     // Select how many Players
     do {
         printf("====================================\n");
@@ -44,10 +48,17 @@ int main()
         scanf("%i",&numBots);
     }
     while (numBots < 2 || numBots > 9);
-
-    // Iniciado o Baralho dos Jogadores
-
     // Começando o Jogo
+        // Iniciado o Baralho dos Jogadores |TO DO|
+        for (int i = 0; i < numBots; i++){
+
+        }
+    // Loop do Jogo c          |TO DO|
+        // Round Logic        |TO DO|
+
+        // Contagem de Pontos |TO DO|
+
+        // Checagem de Vitoria|TO DO|
 
     return 0;
 }
