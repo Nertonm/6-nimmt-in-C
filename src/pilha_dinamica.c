@@ -38,14 +38,14 @@ int pilhaTamamho(Pilha* baralho){
 
 void pilhaEmbaralhar(Pilha* baralho){
     int cartas = 104;
-    // Iniciando o Baralho //
-    for (int i = 0; i < cartas; i++){
-        Carta aux; aux.num = i + 1;
-        pilhaInserir(baralho,aux);
-    }
+    // Iniciando o Baralho
+        for (int i = 0; i < cartas; i++){
+            Carta aux; aux.num = i + 1;
+            pilhaInserir(baralho,aux);
+        }
     // Embaralhando
-    Elemento aux = baralho->top;
-    for (int i = 0; i < cartas; i++){
+        Elemento aux = baralho->top;
+        for (int i = 0; i < cartas; i++){
             Elemento aux2 = baralho->top;
             int random = rand()%(103);
             for (int j = 0; j < random; j++)
@@ -53,6 +53,6 @@ void pilhaEmbaralhar(Pilha* baralho){
             Carta swp = aux->data;
             aux->data = aux2->data;
             aux2->data = swp;
-    }
-    return;
+        }
+        return;
 }
