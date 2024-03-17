@@ -43,7 +43,7 @@
 
 1708827326 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
 
-1710550809 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
+1710551140 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
 	"lista_dinamica.h"
 
 1710549804 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
@@ -55,7 +55,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1710549373 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+1710641918 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
 	"main.h"
 
 1710549051 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
