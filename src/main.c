@@ -19,24 +19,31 @@ int main()
     printf(" #####     #    # # #    # #    #   #   \n");
     // Inicialização do Jogo
         // Declaração de Variaveis
-            int numBots = 2; /* Iniciado em Dois para situar o caso base do Select Players */
+            int numPlayers = 2; /* Iniciado em Dois para situar o caso base do Select Players */
+            int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
         // Selecionando o Numero de Jogadores
             do {
                 printf("========================================\n");
-                if (numBots < 2 || numBots > 9)
+                if (numPlayers < 2 || numPlayers > 10)
                     printf("|           Selecione Novamente        |\n");
                 printf("|           Quantos Jogadores?         |\n");
                 printf("========================================\n");
-                scanf("%i",&numBots);
-            } while (numBots < 2 || numBots > 9);
+                scanf("%i",&numPlayers);
+            } while (numPlayers < 2 || numPlayers > 10);
         // Iniciado o Baralho dos Jogadores |TO DO|
             // Criando o Monte Cartas na memoria e Embaralhando
-                Fila baralhoJogadores[numBots];
+                Fila* baralhoJogadores[numPlayers];
+                for (int i = 0; i < numPlayers; i++)
+                    baralhoJogadores[i] = filaCriar();
                 Pilha* monteCartas = pilhaCriar();
                 pilhaEmbaralhar(monteCartas);
-                for (int i = 0; i < numBots; i++){
-
+                for (int i = 0; i < numPlayers ; i++){
+                    for (int j = 0; j < cartasInicias; j++){
+                        filaInserir(baralhoJogadores[i],monteCartas->top->data);
+                        pilhaRemover(monteCartas,monteCartas->top);
+                    }
                 }
+                filaExibir(baralhoJogadores[1]);
     // Loop do Jogo             |TO DO|
         // Round Logic          |TO DO|
             // Printar Mesa     |TO DO|
