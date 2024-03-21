@@ -48,7 +48,6 @@ int main()
                     }
                 }
                 free(cartaPtr);
-                filaExibir(baralhoJogadores[2]);
     // Loop do Jogo             |TO DO|
         // Round Logic          |TO DO|
             // Printar Mesa     |TO DO|
