@@ -14,14 +14,17 @@ Fila* filaCriar(void){
 int filaInserir(Fila* fila, Carta data){
     Elemento novo = (Elemento) malloc(sizeof(struct elemento));
     novo->data = data;
-    if (fila->ini){
-        fila->fim->prx = novo;
+    novo->prx = NULL;
+    if (fila->ini == NULL){
+        fila->ini = novo;
         fila->fim = novo;
+        fila->ini->prx = fila->fim;
         fila->qtd++;
         return 1;
     }
-    fila->ini = novo;
+    fila->fim->prx = novo;
     fila->fim = novo;
+    fila->fim->prx = NULL;
     fila->qtd++;
     return 1;
 };
