@@ -81,35 +81,38 @@
 1710508176 source:/home/nerton/preservativo/6-nimmt-in-C/src/lista_dinamica.c
 	"lista_dinamica.h"
 
-1710517084 /home/nerton/preservativo/6-nimmt-in-C/src/lista_dinamica.h
+1711029492 /home/nerton/preservativo/6-nimmt-in-C/src/lista_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
+
+1711029464 /home/nerton/preservativo/6-nimmt-in-C/src/cartaStruct.h
 	<stdio.h>
 	<stdlib.h>
 
-1710517058 /home/nerton/preservativo/6-nimmt-in-C/src/cartaStruct.h
-	<stdio.h>
-	<stdlib.h>
-
-1710521277 source:/home/nerton/preservativo/6-nimmt-in-C/src/main.c
+1711027058 source:/home/nerton/preservativo/6-nimmt-in-C/src/main.c
 	"main.h"
 
-1710357920 /home/nerton/preservativo/6-nimmt-in-C/src/main.h
+1711027058 /home/nerton/preservativo/6-nimmt-in-C/src/main.h
 	<stdio.h>
 	<stdlib.h>
 	"fila_dinamica.h"
 	"lista_dinamica.h"
 	"pilha_dinamica.h"
 
-1710518711 /home/nerton/preservativo/6-nimmt-in-C/src/fila_dinamica.h
+1711029485 /home/nerton/preservativo/6-nimmt-in-C/src/fila_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
 
-1710508176 /home/nerton/preservativo/6-nimmt-in-C/src/pilha_dinamica.h
+1711029498 /home/nerton/preservativo/6-nimmt-in-C/src/pilha_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
 
 1710519506 source:/home/nerton/preservativo/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
 	"stdlib.h"
 
-1710522660 source:/home/nerton/preservativo/6-nimmt-in-C/src/pilha_dinamica.c
+1711027058 source:/home/nerton/preservativo/6-nimmt-in-C/src/pilha_dinamica.c
 	"pilha_dinamica.h"
+
+1711028816 /home/nerton/preservativo/6-nimmt-in-C/src/elemento.h
 

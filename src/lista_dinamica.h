@@ -1,6 +1,5 @@
 #include "cartaStruct.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "elemento.h"
 
 struct lista{
   Elemento ini;

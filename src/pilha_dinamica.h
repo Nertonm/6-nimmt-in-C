@@ -1,4 +1,5 @@
 #include "cartaStruct.h"
+#include "elemento.h"
 
 struct pilha{
     struct elemento *top;

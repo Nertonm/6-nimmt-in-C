@@ -1,4 +1,5 @@
 #include "cartaStruct.h"
+#include "elemento.h"
 
 struct fila{
     Elemento ini;

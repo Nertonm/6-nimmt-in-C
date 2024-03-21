@@ -15,10 +15,4 @@ struct carta{
 };
 typedef struct carta Carta;
 
-struct elemento{
-    struct carta data;
-    struct elemento *prx;
-};
-typedef struct elemento* Elemento;
-
 #endif
