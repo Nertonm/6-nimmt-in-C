@@ -21,15 +21,14 @@ int inserirOrdenado(Lista* hand,Carta nova){
     return 1;
 }
 
-int acessarIndice(Lista* hand, int indice, Carta* cartaa){
+int acessarIndice(Lista* hand, int indice, Carta* carta){
     if (hand && indice > 0){
-
         Elemento aux= hand->ini;
         for (int i = 0; i < indice && aux ; i++)
             aux = aux->prx;
+        *carta = aux->data;
         return 1;
     }
-    //To do
     return 0;
 }
 
@@ -39,6 +38,4 @@ int removerIndince(Lista* hand, int indice){
             aux = aux->prx;
     // To Do
     free(aux->prx);
-}
-
 }
