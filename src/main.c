@@ -7,6 +7,7 @@ Estruturas necessárias no main:
 - Coleção dos Jogadores (Lista **), vetor de Listas contendo as cartas adquiridas por cada jogador, use alocação dinâmica
 */
 // Estilo da Arte ASCII e de 40 carcters//
+
 int main()
 {
     // Estilo da Arte ASCII e de 40 carcters//
@@ -17,6 +18,7 @@ int main()
     printf("#     #    #  # # # #    # #    #   #   \n");
     printf("#     #    #   ## # #    # #    #   #   \n");
     printf(" #####     #    # # #    # #    #   #   \n");
+
     // Inicialização do Jogo
         // Declaração de Variaveis
             int numPlayers = 2; /* Iniciado em Dois para situar o caso base do Select Players */
