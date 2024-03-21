@@ -8,7 +8,7 @@ Fila* filaCriar(void){
         nova->qtd = 0;
         return nova;
     }
-    return 0;
+    return NULL;
 };
 
 int filaInserir(Fila* fila, Carta data){
@@ -26,18 +26,31 @@ int filaInserir(Fila* fila, Carta data){
     return 1;
 };
 
-int filaRemover(Fila* fila, Carta* card){
-    Elemento aux = fila->ini;
-    fila->ini = fila->ini->prx;
-    fila->qtd--;
-    free(aux);
-    return 1;
+int filaRemover(Fila* fila, Carta* carta){
+    if (carta && fila){
+        Elemento aux = fila->ini;
+        fila->ini = fila->ini->prx;
+        fila->qtd--;
+        *carta = aux->data;
+        free(aux);
+        return 1;
+    }
+    return 0;
 };
-int filaAcessar();
-\\To Do
+
+int filaAcessar(Fila *fila, Carta *carta){
+    if (carta && fila){
+        Elemento aux = fila->ini;
+        fila->ini = fila->ini->prx;
+        *carta = aux->data;
+        return 1;
+    }
+    return 0;
+};
+
 int filaExibir(Fila* fila){
     Elemento aux = fila->ini;
-    if (aux){
+    if (aux && fila){
         while(aux){
             printf("%i\n",aux->data.num);
             aux = aux->prx;
@@ -48,5 +61,8 @@ int filaExibir(Fila* fila){
 };
 
 int filaTamanho(Fila *fila){
-    return fila->qtd;
-}
+    if (fila){
+        return fila->qtd;
+    }
+    return 0;
+};

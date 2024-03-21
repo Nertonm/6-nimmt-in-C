@@ -43,35 +43,35 @@
 
 1708827326 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
 
-1710551140 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
+1711037454 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
 	"lista_dinamica.h"
 
-1710644288 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
+
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
 	<stdio.h>
 	<stdlib.h>
 
-1710549917 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
-	<stdio.h>
-	<stdlib.h>
-
-1710774205 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+1711037454 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
 	"main.h"
 
-1710549051 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
+1711037454 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
-	"stdlib.h"
 
-1710644293 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
 
-1710645304 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.c
+1711037454 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.c
 	"pilha_dinamica.h"
 
-1710644272 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.h
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.h
 	"cartaStruct.h"
+	"elemento.h"
 
-1710544004 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.h
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.h
 	<stdio.h>
 	<stdlib.h>
 	"fila_dinamica.h"
@@ -115,4 +115,6 @@
 	"pilha_dinamica.h"
 
 1711028816 /home/nerton/preservativo/6-nimmt-in-C/src/elemento.h
+
+1711037454 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/elemento.h
 
