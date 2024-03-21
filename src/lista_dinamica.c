@@ -7,19 +7,21 @@ Lista* listaCriar(){
     hand->qtd = 0;
     if (hand)
         return hand;
+    return NULL;
+};
 
+int inserirOrdenado(Lista* hand, Carta nova){
+    if(hand && nova.num+1){
+        Elemento inserir = (Elemento)malloc(sizeof(Elemento));
+        if(nova.num +1 > 0 && nova.num < 104)
+            inserir->data = nova;
+        //To Do;
+        hand->fim->prx = inserir;
+        hand->fim = inserir;
+        return 1;
+    }
     return 0;
-}
-
-int inserirOrdenado(Lista* hand,Carta nova){
-    Elemento inserir = (Elemento)malloc(sizeof(Elemento));
-    if(nova.num +1 > 0 && nova.num < 104)
-        inserir->data = nova;
-    //To Do;
-    hand->fim->prx = inserir;
-    hand->fim = inserir;
-    return 1;
-}
+};
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){
     if (hand && indice > 0){
@@ -34,8 +36,17 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
 
 int removerIndince(Lista* hand, int indice){
     Elemento aux = hand->ini;
-    for(int i = 1; i < indice && aux->prx; i++)
-            aux = aux->prx;
-    // To Do
-    free(aux->prx);
+    int i = 0;
+    while (i < indice && aux->prx){
+        aux = aux->prx; i++;
+        if (i + 1 == indice){
+            if(hand->ini =  hand->fim)
+                free(aux->prx);
+            Elemento aux2 = aux->prx;
+            aux2 = aux2->prx;
+            free(aux->prx);
+            return 1;
+        }
+    }
+    return 0;
 }

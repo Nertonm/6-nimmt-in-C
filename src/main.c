@@ -21,7 +21,7 @@ int main()
 
     // Inicialização do Jogo
         // Declaração de Variaveis
-            int numPlayers = 2; /* Iniciado em Dois para situar o caso base do Select Players */
+            int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
         // Selecionando o Numero de Jogadores
             do {
@@ -39,13 +39,15 @@ int main()
                     baralhoJogadores[i] = filaCriar();
                 Pilha* monteCartas = pilhaCriar();
                 pilhaEmbaralhar(monteCartas);
+                Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
                 for (int i = 0; i < numPlayers ; i++){
                     for (int j = 0; j < cartasInicias; j++){
-                        filaInserir(baralhoJogadores[i],monteCartas->top->data);
-                        pilhaRemover(monteCartas,monteCartas->top);
+                        pilhaRemover(monteCartas, cartaPtr);
+                        Carta puxada = *cartaPtr;
+                        filaInserir(baralhoJogadores[i], puxada);
                     }
                 }
-                filaExibir(baralhoJogadores[1]);
+                free(cartaPtr);
     // Loop do Jogo             |TO DO|
         // Round Logic          |TO DO|
             // Printar Mesa     |TO DO|
