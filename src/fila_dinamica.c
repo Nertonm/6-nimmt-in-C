@@ -61,8 +61,7 @@ int filaExibir(Fila* fila){
 };
 
 int filaTamanho(Fila *fila){
-    if (fila){
+    if (fila)
         return fila->qtd;
-    }
     return 0;
 };
