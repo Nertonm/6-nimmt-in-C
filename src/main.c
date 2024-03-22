@@ -17,9 +17,9 @@ int main()
             // Criando o Monte Cartas na memoria e Embaralhando
                 Fila* baralhoJogadores[numPlayers];
                 Pilha* monteCartas = pilhaCriar();
-                iniGame(Fila* baralhoJogadores[numPlayers],Pilha* monteCartas, numPlayers){
+                iniGame(baralhoJogadores, monteCartas, numPlayers);
             // Mesa do Jogo
-                Fila **mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
+                //Fila **mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
                 // TO DO
                 /*for(int i=0;i<FILAS;i++){
                     mesa[i]=

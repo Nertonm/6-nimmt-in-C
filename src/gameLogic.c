@@ -10,9 +10,8 @@ void msgIni(){
     printf(" #####     #    # # #    # #    #   #   \n");
 };
 
-void iniGame(Fila* baralhoJogadores[numPlayers],Pilha* monteCartas, int numPlayers){
+void iniGame(Fila* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
     // Declaração de Variaveis
-            int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
             int ROUNDS=10; /* Numero max de partidas */
             int FILAS= 4; /* estabelece o nummero de filas da mesa*/
