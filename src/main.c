@@ -1,4 +1,4 @@
-#include "main.h"
+#include "gameLogic.h"
 /*
 Estruturas necessárias no main:
 - Mão (Lista *), começa com 10 cartas diminui a cada rodada
@@ -16,6 +16,7 @@ int main()
         // Iniciado o Baralho dos Jogadores
             // Criando o Monte Cartas na memoria e Embaralhando
                 Fila* baralhoJogadores[numPlayers];
+                printf("lua");
                 Pilha* monteCartas = pilhaCriar();
                 iniGame(baralhoJogadores, monteCartas, numPlayers);
             // Mesa do Jogo
