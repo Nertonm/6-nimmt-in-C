@@ -61,7 +61,6 @@ int filaAcessar(Fila *fila, Carta *carta){
 
 int filaExibir(Fila* fila){
     Elemento aux = fila->ini;
-    printf("\n");
         while(aux){
             printf("[%i]->",aux->data.num);
             aux = aux->prx;

@@ -64,3 +64,18 @@ int removerIndince(Lista* hand, int indice){
     }
     return 0;
 }
+
+int exibir(Lista* mao){
+        int count = 0;
+        Elemento aux = mao->ini;
+        printf("Your Colection:\nHand:");
+        while(aux){
+            count++;
+            printf("[%i]->",aux->data.num);
+            aux = aux->prx;
+        }
+        printf("\n      ");
+        for(int i = 0; i < count; i++){
+            printf("(%d)   ",i+1);
+        }
+};

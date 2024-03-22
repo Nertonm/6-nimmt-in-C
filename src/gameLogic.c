@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void msgIni(){
+int msgIni(){
     // Estilo da Arte ASCII e de 40 carcters//
     printf(" #####                                  \n");
     printf("#     #    #    # # #    # #    # ##### \n");
@@ -11,17 +11,8 @@ void msgIni(){
     printf("#     #    #  # # # #    # #    #   #   \n");
     printf("#     #    #   ## # #    # #    #   #   \n");
     printf(" #####     #    # # #    # #    #   #   \n");
-};
-
-void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
-    // Declaração de Variaveis
-            int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
-            int ROUNDS=10;          /* Numero max de partidas */
-            int FILAS= 4;           /* estabelece o nummero de filas da mesa*/
-    // Mensagem Inicial
-    msgIni();
-    // Inicialização do Jogo
-        // Selecionando o Numero de Jogadores
+    // Selecionando o Numero de Jogadores
+        int numPlayers = 2;
         do {
             printf("========================================\n");
             if (numPlayers < 2 || numPlayers > 10)
@@ -30,6 +21,14 @@ void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
             printf("========================================\n");
             scanf("%i",&numPlayers);
         } while (numPlayers < 2 || numPlayers > 10);
+        return numPlayers;
+};
+
+void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
+    // Declaração de Variaveis
+            int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
+            int ROUNDS=10;          /* Numero max de partidas */
+    // Inicialização do Jogo
             pilhaEmbaralhar(monteCartas);
             for (int i = 0; i < numPlayers; i++)
                 baralhoJogadores[i] = listaCriar();
@@ -55,10 +54,19 @@ void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         free(cartaPtr);
 };
 void printMesa(struct fila **mesa, int numMesa){
-    for (int i = 0; i < numMesa; i++)
+    for (int i = 0; i < numMesa; i++){
          filaExibir(mesa[i]);
+         printf("\n");
+    }
     return;
 };
+void printMao(struct lista** baralhoJogadores){
+    exibir(baralhoJogadores[0]);
+};
 void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa){
-    return;
+    printMesa(mesa, numMesa);
+    printMao(baralhoJogadores);
+    int selec;
+    do {scanf("%i",&selec);}
+
 };

@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 /*
 Estruturas necessárias no main:
 - Mão (Lista *), começa com 10 cartas diminui a cada rodada
@@ -15,22 +14,20 @@ int main()
 {
     // Inicio do Jogo
         // Declaração de Variaveis
-            int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
-            int numMesa = 4;        /* Iniciando o valor da mesa para o padrão do jogo */
+            int numPlayers = msgIni();    /* Iniciado em Dois para situar o caso base do Select Players */
+            int numMesa = 4;              /* Iniciando o valor da mesa para o padrão do jogo */
         // Iniciando a mão dos Jogadores
             Pilha* monteCartas = pilhaCriar();
             Lista* baralhoJogadores[numPlayers];
             iniGame(baralhoJogadores, monteCartas, numPlayers);
-        // Iniciando a mesa e imprimindo
+        // Iniciando a mesa
             Fila *mesa[numMesa];
             iniMesa(mesa, monteCartas, numMesa);
-            printMesa(mesa, numMesa);
-
     // Loop do Jogo             |TO DO|
                 // printa a mesa e a mao do jogador, pede pra ele escolher uma carta e qual*/
+
         // Round Logic          |TO DO|
-            // Printar Mesa     |TO DO|
-            // Jogadas          |TO DO|
+            // Jogar            |TO DO|
                 // Players      |TO DO|
                 // Bots         |TO DO|
                 // Verificação  |TO DO|
