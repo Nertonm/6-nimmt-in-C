@@ -7,4 +7,6 @@
 
 void msgIni();
 void iniGame(Lista** , Pilha*, int);
+void iniMesa(Fila** mesa, int numMesa);
+void printMesa(Lista**, Fila**);
 void loopGame(Lista**, Pilha*, Fila**);

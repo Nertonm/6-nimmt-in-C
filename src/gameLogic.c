@@ -43,11 +43,18 @@ void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
         }
         free(cartaPtr);
 };
+void iniMesa(Fila** mesa, int numMesa){
+        for (int i = 0; i < numMesa ; i++){
+                pilhaRemover(monteCartas, cartaPtr);
+                Carta puxada = *cartaPtr;
+                filaInserir(baralhoJogadores[i], puxada);
+        }
+        free(cartaPtr);
+};
 void printMesa(Lista* baralhoJogadores[], Fila** mesa){
 
 
 }
-
 void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa){
 
 }
