@@ -10,39 +10,14 @@ Estruturas necessárias no main:
 int main()
 {
     // Inicialização do Jogo
-        // Mensagem Inicial
-        msgIni();
-        // Declaração de Variaveis
+    // Declaração de Variaveis
             int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
-            int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
-            int ROUNDS=10; /* Numero max de partidas */
-            int FILAS= 4; /* estabelece o nummero de filas da mesa*/
-            Carta t; /*carta temporaria*/
         // Selecionando o Numero de Jogadores
-            do {
-                printf("========================================\n");
-                if (numPlayers < 2 || numPlayers > 10)
-                    printf("|           Selecione Novamente        |\n");
-                printf("|           Quantos Jogadores?         |\n");
-                printf("========================================\n");
-                scanf("%i",&numPlayers);
-            } while (numPlayers < 2 || numPlayers > 10);
         // Iniciado o Baralho dos Jogadores
             // Criando o Monte Cartas na memoria e Embaralhando
                 Fila* baralhoJogadores[numPlayers];
-                for (int i = 0; i < numPlayers; i++)
-                    baralhoJogadores[i] = filaCriar();
                 Pilha* monteCartas = pilhaCriar();
-                pilhaEmbaralhar(monteCartas);
-                Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
-                for (int i = 0; i < numPlayers ; i++){
-                    for (int j = 0; j < cartasInicias; j++){
-                        pilhaRemover(monteCartas, cartaPtr);
-                        Carta puxada = *cartaPtr;
-                        filaInserir(baralhoJogadores[i], puxada);
-                    }
-                }
-                free(cartaPtr);
+                iniGame(Fila* baralhoJogadores[numPlayers],Pilha* monteCartas, numPlayers){
             // Mesa do Jogo
                 Fila **mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
                 // TO DO
