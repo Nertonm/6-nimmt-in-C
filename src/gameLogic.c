@@ -1,3 +1,4 @@
+
 #include "gameLogic.h"
 void msgIni(){
     // Estilo da Arte ASCII e de 40 carcters//
