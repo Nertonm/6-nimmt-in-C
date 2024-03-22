@@ -1,4 +1,6 @@
 #include "lista_dinamica.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 Lista* listaCriar(){
     Lista* hand = (Lista*)malloc(sizeof(Lista));
