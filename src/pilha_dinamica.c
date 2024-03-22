@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct pilha{
+    struct elemento *top;
+    int qtd;
+};
+
 Pilha* pilhaCriar(){
     Pilha* baralho = (Pilha*)malloc(sizeof(Pilha));
     baralho->qtd = 0;

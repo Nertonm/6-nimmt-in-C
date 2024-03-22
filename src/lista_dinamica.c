@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct lista{
+  Elemento ini;
+  Elemento fim;
+  int qtd;
+};
+
 Lista* listaCriar(){
     Lista* hand = (Lista*)malloc(sizeof(Lista));
     hand->fim = NULL;
@@ -13,16 +19,22 @@ Lista* listaCriar(){
 };
 
 int inserirOrdenado(Lista* hand, Carta nova){
-    if(hand && nova.num+1){
-        Elemento inserir = (Elemento)malloc(sizeof(Elemento));
-        if(nova.num +1 > 0 && nova.num < 104)
-            inserir->data = nova;
-        //To Do;
-        hand->fim->prx = inserir;
-        hand->fim = inserir;
+    Elemento novo = (Elemento) malloc(sizeof(struct elemento));
+    novo->data = nova;
+    novo->prx = NULL;
+    if (hand->ini == NULL){
+        hand->ini = novo;
+        hand->fim = novo;
+        hand->ini->prx = hand->fim;
+        hand->qtd++;
         return 1;
     }
-    return 0;
+    hand->fim->prx = novo;
+    hand->fim = novo;
+    hand->fim->prx = NULL;
+    hand->qtd++;
+    return 1;
+    //TO DO
 };
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){

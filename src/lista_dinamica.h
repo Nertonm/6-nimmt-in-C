@@ -1,11 +1,6 @@
 #include "cartaStruct.h"
 #include "elemento.h"
 
-struct lista{
-  Elemento ini;
-  Elemento fim;
-  int qtd;
-};
 typedef struct lista Lista;
 Lista* listaCriar();
 int inserirOrdenado(Lista*, struct carta);

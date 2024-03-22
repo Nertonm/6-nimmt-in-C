@@ -2,11 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct fila{
+    Elemento ini;
+    Elemento fim;
+    int qtd;
+};
+
 Fila* filaCriar(void){
     Fila* nova = (Fila*)malloc(sizeof(Fila));
     if (nova){
-        nova->fim = NULL;
         nova->ini = NULL;
+        nova->fim = NULL;
         nova->qtd = 0;
         return nova;
     }

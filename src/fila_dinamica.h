@@ -1,12 +1,6 @@
 #include "cartaStruct.h"
 #include "elemento.h"
 
-struct fila{
-    Elemento ini;
-    Elemento fim;
-    int qtd;
-};
-
 typedef struct fila Fila;
 Fila* filaCriar();
 int filaInserir(Fila *, struct carta);
