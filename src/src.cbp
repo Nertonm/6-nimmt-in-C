@@ -27,6 +27,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fila_dinamica.h" />
+		<Unit filename="gameLogic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gameLogic.h" />
 		<Unit filename="lista_dinamica.c">
 			<Option compilerVar="CC" />
 		</Unit>
