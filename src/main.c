@@ -9,14 +9,10 @@ Estruturas necessárias no main:
 // Estilo da Arte ASCII e de 40 carcters//
 int main()
 {
-    // Inicialização do Jogo
     // Declaração de Variaveis
             int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
-        // Selecionando o Numero de Jogadores
         // Iniciado o Baralho dos Jogadores
-            // Criando o Monte Cartas na memoria e Embaralhando
-                Fila* baralhoJogadores[numPlayers];
-                printf("lua");
+                Lista* baralhoJogadores[numPlayers];
                 Pilha* monteCartas = pilhaCriar();
                 iniGame(baralhoJogadores, monteCartas, numPlayers);
             // Mesa do Jogo

@@ -6,4 +6,5 @@
 
 
 void msgIni();
-void iniGame(Fila** , Pilha*, int);
+void iniGame(Lista** , Pilha*, int);
+void loopGame(Lista**, Pilha*, Fila**);
