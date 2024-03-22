@@ -57,39 +57,17 @@ int main()
 
             // Mesa do Jogo
                 mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
-
-                for(int i=0;i<FILAS;i++){
-                    mesa[i]=//treminar
-                }
+                // TO DO
+                /*for(int i=0;i<FILAS;i++){
+                    mesa[i]=
+                }*./
     // Loop do Jogo             |TO DO|
-
             for(int i=0;i<ROUNDS;i++);{
-
-
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-                printf("\n");
-
+                for(int i = 0; i<14; i++)
+                    printf("\n");
                 printf("ROUND %d \n",i+1);
-
                 system("cls"); /*limpa a tela*/
-
                 // printa a mesa e a mao do jogador, pede pra ele escolher uma carta e qual
-
-
-
-            }
 
         // Round Logic          |TO DO|
             // Printar Mesa     |TO DO|
