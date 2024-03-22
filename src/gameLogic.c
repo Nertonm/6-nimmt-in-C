@@ -70,5 +70,8 @@ void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa, int nu
     int selec;
     do scanf("%i",&selec);
     while (selec < 1 || selec > 10);
+    Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
+    acessarIndice(baralhoJogadores[0],selec,cartaPtr);
+    removerIndince(baralhoJogadores[0],selec);
 
 };

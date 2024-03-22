@@ -45,6 +45,7 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
         *carta = aux->data;
         return 1;
     }
+    printf("Invalid Number");
     return 0;
 }
 
