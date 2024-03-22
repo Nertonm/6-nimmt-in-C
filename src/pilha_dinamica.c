@@ -1,4 +1,6 @@
 #include "pilha_dinamica.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 Pilha* pilhaCriar(){
     Pilha* baralho = (Pilha*)malloc(sizeof(Pilha));
