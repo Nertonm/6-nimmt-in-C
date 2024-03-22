@@ -1,12 +1,13 @@
 #include "main.h"
 /*
 Estruturas necessárias no main:
-- Mão (Lista *), sempre com cinco cartas: joga uma e compra uma
+- Mão (Lista *), começa com 10 cartas diminui a cada rodada
 - Mesa (Fila **), é um vetor de Filas, use alocação dinâmica
 - Baralho (Pilha *), inicia com 104 cartas embaralhadas, depois distribui 4 para mesa e 10 para cada jogador
 - Coleção dos Jogadores (Lista **), vetor de Listas contendo as cartas adquiridas por cada jogador, use alocação dinâmica
 */
 // Estilo da Arte ASCII e de 40 carcters//
+
 
 int main()
 {
@@ -23,6 +24,11 @@ int main()
         // Declaração de Variaveis
             int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
+            int i=0;
+            int ROUNDS=10; /* Numero max de partidas */
+            int FILAS= 4; /* estabelece o nummero de filas da mesa*/
+            int mesa;
+            Carta t; /*carta temporaria*/
         // Selecionando o Numero de Jogadores
             do {
                 printf("========================================\n");
@@ -32,7 +38,7 @@ int main()
                 printf("========================================\n");
                 scanf("%i",&numPlayers);
             } while (numPlayers < 2 || numPlayers > 10);
-        // Iniciado o Baralho dos Jogadores |TO DO|
+        // Iniciado o Baralho dos Jogadores
             // Criando o Monte Cartas na memoria e Embaralhando
                 Fila* baralhoJogadores[numPlayers];
                 for (int i = 0; i < numPlayers; i++)
@@ -48,7 +54,43 @@ int main()
                     }
                 }
                 free(cartaPtr);
+
+            // Mesa do Jogo
+                mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
+
+                for(int i=0;i<FILAS;i++){
+                    mesa[i]=//treminar
+                }
     // Loop do Jogo             |TO DO|
+
+            for(int i=0;i<ROUNDS;i++);{
+
+
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
+
+                printf("ROUND %d \n",i+1);
+
+                system("cls"); /*limpa a tela*/
+
+                // printa a mesa e a mao do jogador, pede pra ele escolher uma carta e qual
+
+
+
+            }
+
         // Round Logic          |TO DO|
             // Printar Mesa     |TO DO|
             // Jogadas          |TO DO|
