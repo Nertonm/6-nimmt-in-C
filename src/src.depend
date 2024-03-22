@@ -89,15 +89,13 @@
 	<stdio.h>
 	<stdlib.h>
 
-1711027058 source:/home/nerton/preservativo/6-nimmt-in-C/src/main.c
+1711116389 source:/home/nerton/preservativo/6-nimmt-in-C/src/main.c
 	"main.h"
 
-1711027058 /home/nerton/preservativo/6-nimmt-in-C/src/main.h
+1711116229 /home/nerton/preservativo/6-nimmt-in-C/src/main.h
 	<stdio.h>
 	<stdlib.h>
-	"fila_dinamica.h"
-	"lista_dinamica.h"
-	"pilha_dinamica.h"
+	"gameLogic.h"
 
 1711115443 /home/nerton/preservativo/6-nimmt-in-C/src/fila_dinamica.h
 	"cartaStruct.h"
@@ -143,4 +141,14 @@
 1711052849 c:\users\luana teles\documents\github\6-nimmt-in-c\src\pilha_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
+
+1711116124 source:/home/nerton/preservativo/6-nimmt-in-C/src/gameLogic.c
+	"gameLogic.h"
+
+1711116166 /home/nerton/preservativo/6-nimmt-in-C/src/gameLogic.h
+	<stdio.h>
+	<stdlib.h>
+	"fila_dinamica.h"
+	"lista_dinamica.h"
+	"pilha_dinamica.h"
 

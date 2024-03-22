@@ -9,23 +9,14 @@ Estruturas necessárias no main:
 // Estilo da Arte ASCII e de 40 carcters//
 int main()
 {
-    // Estilo da Arte ASCII e de 40 carcters//
-    printf(" #####                                  \n");
-    printf("#     #    #    # # #    # #    # ##### \n");
-    printf("#          ##   # # ##  ## ##  ##   #   \n");
-    printf("######     # #  # # # ## # # ## #   #   \n");
-    printf("#     #    #  # # # #    # #    #   #   \n");
-    printf("#     #    #   ## # #    # #    #   #   \n");
-    printf(" #####     #    # # #    # #    #   #   \n");
-
     // Inicialização do Jogo
+        // Mensagem Inicial
+        msgIni();
         // Declaração de Variaveis
             int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
-            int i=0;
             int ROUNDS=10; /* Numero max de partidas */
             int FILAS= 4; /* estabelece o nummero de filas da mesa*/
-            int mesa;
             Carta t; /*carta temporaria*/
         // Selecionando o Numero de Jogadores
             do {
@@ -52,9 +43,8 @@ int main()
                     }
                 }
                 free(cartaPtr);
-
             // Mesa do Jogo
-                mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
+                Fila **mesa = (Fila**)malloc(FILAS* sizeof(Fila*));
                 // TO DO
                 /*for(int i=0;i<FILAS;i++){
                     mesa[i]=

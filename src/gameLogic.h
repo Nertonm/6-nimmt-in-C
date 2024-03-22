@@ -4,3 +4,4 @@
 #include "lista_dinamica.h"
 #include "pilha_dinamica.h"
 
+void msgIni();
