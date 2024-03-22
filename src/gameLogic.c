@@ -4,13 +4,14 @@
 
 int msgIni(){
     // Estilo da Arte ASCII e de 40 carcters//
-    printf(" #####                                  \n");
+    printf("                                   \n");
     printf("#     #    #    # # #    # #    # ##### \n");
     printf("#          ##   # # ##  ## ##  ##   #   \n");
     printf("######     # #  # # # ## # # ## #   #   \n");
-    printf("#     #    #  # # # #    # #    #   #   \n");
-    printf("#     #    #   ## # #    # #    #   #   \n");
-    printf(" #####     #    # # #    # #    #   #   \n");
+    printf("              |   /|   |  |   /  | \n");
+    printf("              |  / |  /   |  /\  | \n");
+    printf("              ###  ###    ###  ###         \n");
+    printf("              ###  ###    ###  ###         \n");
     // Selecionando o Numero de Jogadores
         int numPlayers = 2;
         do {
