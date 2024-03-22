@@ -63,10 +63,11 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
-void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa){
+void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa, int numMesa){
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
     int selec;
-    do {scanf("%i",&selec);}
+    do scanf("%i",&selec);
+    while (selec < 1 || selec > 10);
 
 };

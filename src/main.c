@@ -24,8 +24,7 @@ int main()
             Fila *mesa[numMesa];
             iniMesa(mesa, monteCartas, numMesa);
     // Loop do Jogo             |TO DO|
-                // printa a mesa e a mao do jogador, pede pra ele escolher uma carta e qual*/
-
+            //loopGame()
         // Round Logic          |TO DO|
             // Jogar            |TO DO|
                 // Players      |TO DO|
