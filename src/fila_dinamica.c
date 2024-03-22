@@ -1,4 +1,6 @@
 #include "fila_dinamica.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 Fila* filaCriar(void){
     Fila* nova = (Fila*)malloc(sizeof(Fila));
