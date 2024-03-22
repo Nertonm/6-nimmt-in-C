@@ -54,16 +54,10 @@ void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         }
         free(cartaPtr);
 };
-void printMesa(Fila** mesa, int numMesa){
-    for (int i = 0; i < numMesa; i++){
-         Elemento tmp = (mesa[i])->ini;
-
-      /*  if (tmpMesa){
-            do{
-                printf("[%i]",tmp->);
-            }while(i == 1);
-        }*/
-    }
+void printMesa(struct fila **mesa, int numMesa){
+    for (int i = 0; i < numMesa; i++)
+         filaExibir(mesa[i]);
+    return;
 };
 void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa){
     return;

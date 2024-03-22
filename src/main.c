@@ -18,12 +18,13 @@ int main()
             int numPlayers = 2;     /* Iniciado em Dois para situar o caso base do Select Players */
             int numMesa = 4;        /* Iniciando o valor da mesa para o padrão do jogo */
         // Iniciando a mão dos Jogadores
-            Lista* baralhoJogadores[numPlayers];
             Pilha* monteCartas = pilhaCriar();
+            Lista* baralhoJogadores[numPlayers];
             iniGame(baralhoJogadores, monteCartas, numPlayers);
         // Iniciando a mesa e imprimindo
             Fila *mesa[numMesa];
             iniMesa(mesa, monteCartas, numMesa);
+            printMesa(mesa, numMesa);
 
     // Loop do Jogo             |TO DO|
                 // printa a mesa e a mao do jogador, pede pra ele escolher uma carta e qual*/

@@ -23,9 +23,9 @@ int filaInserir(Fila* fila, Carta data){
     Elemento novo = (Elemento) malloc(sizeof(struct elemento));
     novo->data = data;
     novo->prx = NULL;
-    if (fila->ini == NULL){
+    if (!fila->ini){
         fila->ini = novo;
-        fila->fim = novo;
+        fila->fim = NULL;
         fila->ini->prx = fila->fim;
         fila->qtd++;
         return 1;
@@ -61,14 +61,12 @@ int filaAcessar(Fila *fila, Carta *carta){
 
 int filaExibir(Fila* fila){
     Elemento aux = fila->ini;
-    if (aux && fila){
+    printf("\n");
         while(aux){
-            printf("%i\n",aux->data.num);
+            printf("[%i]->",aux->data.num);
             aux = aux->prx;
         }
         return 1;
-    }
-    return 0;
 };
 
 int filaTamanho(Fila *fila){

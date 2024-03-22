@@ -30,10 +30,10 @@ int pilhaInserir(Pilha* baralho, Carta insert){
 };
 
 int pilhaRemover (Pilha* baralho, Carta *puxada){
-    if (baralho){
+    if (baralho->top){
         *puxada = baralho->top->data;
         Elemento aux = baralho->top;
-        baralho->top = aux->prx;
+        baralho->top = baralho->top->prx;
         free(aux);
         return 1;
     }
