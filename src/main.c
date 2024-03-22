@@ -7,8 +7,6 @@ Estruturas necessárias no main:
 - Coleção dos Jogadores (Lista **), vetor de Listas contendo as cartas adquiridas por cada jogador, use alocação dinâmica
 */
 // Estilo da Arte ASCII e de 40 carcters//
-
-
 int main()
 {
     // Estilo da Arte ASCII e de 40 carcters//
