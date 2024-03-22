@@ -4,5 +4,6 @@
 #include "lista_dinamica.h"
 #include "pilha_dinamica.h"
 
+
 void msgIni();
 void iniGame(Fila** , Pilha*, int);
