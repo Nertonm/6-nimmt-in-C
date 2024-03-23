@@ -8,6 +8,24 @@ int msgIni(){
     // Selecionando o Numero de Jogadores
         int numPlayers = 2;
         do {
+            printf("                                    .@                                                                  \n");
+            printf("                                     #@#          .::@@@@-           *+                                 \n");
+            printf("                                      *@@@#-  -=-:    -+# +@+          #@.                              \n");
+            printf("                                        .@@@@@@@@@           :@*         @@-                            \n");
+            printf("                                           *@@@@@@-             #@#+.  :@@@@                            \n");
+            printf("                                          =@  .-##   :*           . @@@@@@@*                            \n");
+            printf("                                       .@-       -#@-             :@@@@@@                               \n");
+            printf("                                      +@      *#       @@@.        @@                                   \n");
+            printf("                                     @@       #         @ +@       @=                                   \n");
+            printf("                                      =@@    ::     :    @@@@     .@#                                   \n");
+            printf("                                        #@.   =     #        .      =@                                  \n");
+            printf("                                         :@.  =     @        =       :@-                                \n");
+            printf("                                           @# :=   =@              +*.:@@#                              \n");
+            printf("                                             -@#=   :#.          *-       @=                            \n");
+            printf("                                               +@@+       :   +:  -@  *@.-@.                            \n");
+            printf("                                                 : -*@@@#=:  ##  =  @:  .-@                             \n");
+            printf("                                                           -#@@   :     -@                              \n");
+            printf("                                                              @@@@@@@@@@#                               \n");
             printf("========================================\n");
             if (numPlayers < 2 || numPlayers > 10)
                 printf("|           Selecione Novamente        |\n");
@@ -58,7 +76,7 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, ints points){
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
     int insert = -1, selec = 104;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
