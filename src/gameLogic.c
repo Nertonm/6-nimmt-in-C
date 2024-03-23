@@ -50,6 +50,7 @@ void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers){
                     pilhaRemover(monteCartas, cartaPtr);
                     Carta puxada = *cartaPtr;
                     inserirOrdenado(baralhoJogadores[i], puxada);
+                    //Inicializar em sequencia
                 }
             }
         free(cartaPtr);
@@ -77,7 +78,7 @@ void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
 void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
-    int insert = -1, selec = 104;
+    int insert = -1, selec = 104, tam;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
         filaAcessar(mesa[i],cartaPtr);
@@ -85,21 +86,29 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
         if(dif < selec && cartaAux.num > cartaPtr->num){
             selec = dif;
             insert = i;
+            tam = filaTamanho(mesa[insert]);
         }
     }
     if(insert != -1){
-        filaInserir(mesa[insert], cartaAux);
+        if (tam = 5){
+            for(int i = 0; i < tam; i++){
+                filaRemover(mesa[insert],cartaPtr);
+                points += cartaPtr->boi;
+            }
+        }
+        if (mesa)
+            filaInserir(mesa[insert], cartaAux);
         return;
     }
-        do{
-            printf("========================================\n");
-            printf("|           Qual Fila puxar  ?         |\n");
-            printf("========================================\n");
-            scanf("%i",&insert);
-        } while (insert < 1|| insert > 4);
+    do{
+        printf("========================================\n");
+        printf("|           Qual Fila puxar  ?         |\n");
+        printf("========================================\n");
+        scanf("%i",&insert);
+    } while (insert < 1|| insert > 4);
     insert--;
     // FALTA AS VERIFICAções
-    int tam = filaTamanho(mesa[insert]);
+    tam = filaTamanho(mesa[insert]);
     for(int i = 0; i < tam; i++){
         filaRemover(mesa[insert],cartaPtr);
         points += cartaPtr->boi;

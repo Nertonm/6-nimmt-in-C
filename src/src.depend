@@ -56,7 +56,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1711163903 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+1711205646 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
 	"gameLogic.h"
 	<stdio.h>
 	<stdlib.h>
@@ -184,13 +184,13 @@
 1711123211 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\gamelogic.c
 	"gameLogic.h"
 
-1711204860 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.c
+1711208516 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.c
 	"gameLogic.h"
 	<stdio.h>
 	<stdlib.h>
 	"fila_dinamica.h"
 
-1711163922 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.h
+1711205653 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.h
 	"fila_dinamica.h"
 	"lista_dinamica.h"
 	"pilha_dinamica.h"
