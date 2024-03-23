@@ -77,7 +77,7 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer){
     int insert = -1, selec = 104, tam;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
@@ -100,6 +100,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
             filaInserir(mesa[insert], cartaAux);
         return;
     }
+    if (isPlayer){
     do{
         printf("========================================\n");
         printf("|           Qual Fila puxar  ?         |\n");
@@ -107,6 +108,9 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
         scanf("%i",&insert);
     } while (insert < 1|| insert > 4);
     insert--;
+    }else{
+        insert = (rand() % 4) + 1;
+    }
     // FALTA AS VERIFICAções
     tam = filaTamanho(mesa[insert]);
     for(int i = 0; i < tam; i++){
@@ -118,6 +122,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers){
      // Round Logic
      for (int i = 0; i < 10; i++){
+        int isPlayer = 1;
                 // Verificação  |TO DO|
         // Printing
         printMesa(mesa, numMesa);
@@ -136,17 +141,18 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             // Player
                 acessarIndice(baralhoJogadores[0],selec,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                insertMesa(mesa,cartaPtr,numMesa);
+                insertMesa(mesa,cartaPtr,numMesa,isPlayer);
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
                 printf("========================================\n");
             // Bots
+                isPlayer = 0;
                 for (int i = 1; i < numPlayers; i++){
                         selec = (rand() % 10) + 1;
                         acessarIndice(baralhoJogadores[i],selec,cartaPtr);
                         removerIndince(baralhoJogadores[i],selec);
                         // Fazer um vetor com as cartas mais baixas para jogar em sequencia
-                        insertMesa(mesa,cartaPtr,numMesa);
+                        insertMesa(mesa,cartaPtr,numMesa,isPlayer);
                 }
     }
 };

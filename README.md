@@ -3,7 +3,6 @@
 ## TO DO
     - Revist TAD and finish verifications
     - Solver Players turn lowest card to heigher 
-    - Solve the program asking for where the bot push 
     - Create the fila pushed carts
 **Description**
 
