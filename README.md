@@ -1,5 +1,10 @@
 # 6-nimmt-in-C
 
+## TO DO
+    - Revist TAD and finish verifications
+    - Change Hand order to crescent 
+    - Solver Players turn lowest card to heigher 
+    
 **Description**
 
 This project is a C implementation of the popular card game 6-Nimmt, also known as "Take 6!" or "6 Take." 

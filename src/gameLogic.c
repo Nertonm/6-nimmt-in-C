@@ -128,8 +128,9 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     //Jogada dos Bots
     for (int i = 1; i < numPlayers; i++){
             selec = (rand() % 10) + 1;
-            acessarIndice(baralhoJogadores[1],selec,cartaPtr);
-            removerIndince(baralhoJogadores[1],selec);
+            acessarIndice(baralhoJogadores[i],selec,cartaPtr);
+            removerIndince(baralhoJogadores[i],selec);
+            // Fazer um vetor com as cartas mais baixas para jogar em sequencia
             insertMesa(mesa,cartaPtr,numMesa, points[i]);
     }
     printMesa(mesa, numMesa);
