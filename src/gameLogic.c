@@ -59,19 +59,20 @@ void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
 void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
-    int insert = 0;
+    int insert = -1;
     int selec = 104;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
         struct fila* tmp = mesa[i];
         filaAcessar(tmp,cartaPtr);
-        int dif = abs(cartaAux.num - (*cartaPtr).num);
+        int dif = cartaAux.num - (*cartaPtr).num;
         if(dif < selec){
             selec = dif;
             insert = i;
         }
     }
-    filaInserir(mesa[insert],cartaAux);
+    if (insert != -1)
+        filaInserir(mesa[insert], cartaAux);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa){
     printMesa(mesa, numMesa);
