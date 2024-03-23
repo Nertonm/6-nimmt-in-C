@@ -19,22 +19,34 @@ Lista* listaCriar(){
 };
 
 int inserirOrdenado(Lista* hand, Carta nova){
-    Elemento novo = (Elemento) malloc(sizeof(struct elemento));
-    novo->data = nova;
-    novo->prx = NULL;
-    if (hand->ini == NULL){
-        hand->ini = novo;
-        hand->fim = novo;
-        hand->ini->prx = hand->fim;
+    // Alocando o Novo Elemento
+        Elemento novo = (Elemento) malloc(sizeof(struct elemento));
+        novo->data = nova;
+        novo->prx = NULL;
+    //Caso de Primeiro Elemento
+        if (!hand->ini || nova.num < hand->ini->data.num){
+            novo->prx = hand->ini;
+            hand->ini = novo;
+            if (!hand->fim)
+                hand->fim = novo;
+            //hand->ini->prx = hand->fim;
+            hand->qtd++;
+            return 1;
+        }
+        Elemento tmp = hand->ini;
+        Elemento ant= NULL;
+    // Procurando a Posição correta de inserção
+        while (tmp && tmp->data.num < novo->data.num){
+            ant = tmp;
+            tmp = tmp->prx;
+        }
         hand->qtd++;
+        ant->prx = novo;
+        novo->prx = tmp;
+        //Caso ultimo elemento
+        if (!tmp)
+            hand->fim = novo;
         return 1;
-    }
-    hand->fim->prx = novo;
-    hand->fim = novo;
-    hand->fim->prx = NULL;
-    hand->qtd++;
-    return 1;
-    //TO DO
 };
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){

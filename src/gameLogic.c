@@ -77,7 +77,7 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
     int insert = -1, selec = 104, tam;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
@@ -93,7 +93,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert],cartaPtr);
-                points += cartaPtr->boi;
+                //points += cartaPtr->boi;
             }
         }
         if (mesa)
@@ -111,11 +111,11 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
     tam = filaTamanho(mesa[insert]);
     for(int i = 0; i < tam; i++){
         filaRemover(mesa[insert],cartaPtr);
-        points += cartaPtr->boi;
+        //points += cartaPtr->boi;
     }
     filaInserir(mesa[insert], cartaAux);
 };
-void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int* points, int numPlayers){
+void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers){
      // Round Logic
      for (int i = 0; i < 10; i++){
                 // Verificação  |TO DO|
@@ -136,7 +136,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             // Player
                 acessarIndice(baralhoJogadores[0],selec,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                insertMesa(mesa,cartaPtr,numMesa, points[0]);
+                insertMesa(mesa,cartaPtr,numMesa);
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
                 printf("========================================\n");
@@ -146,7 +146,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                         acessarIndice(baralhoJogadores[i],selec,cartaPtr);
                         removerIndince(baralhoJogadores[i],selec);
                         // Fazer um vetor com as cartas mais baixas para jogar em sequencia
-                        insertMesa(mesa,cartaPtr,numMesa, points[i]);
+                        insertMesa(mesa,cartaPtr,numMesa);
                 }
     }
 };

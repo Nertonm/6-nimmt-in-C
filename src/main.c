@@ -15,16 +15,16 @@ int main()
         // Declaração de Variaveis
             int numPlayers = msgIni();    /* Iniciado em Dois para situar o caso base do Select Players */
             int numMesa = 4;              /* Iniciando o valor da mesa para o padrão do jogo */
-        // Iniciando a mão dos Jogadores
+        // Iniciando as Estrutura precisas
             Pilha* monteCartas = pilhaCriar();
             Lista* baralhoJogadores[numPlayers];
-            int points[numPlayers];
+            Lista* pontosJogadores[numPlayers];
             Fila *mesa[numMesa];
             iniGame(baralhoJogadores, monteCartas, numPlayers);
         // Iniciando a mesa
             iniMesa(mesa,monteCartas,numMesa);
     // Loop do Jogo
-            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, points, numPlayers);
+            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, numPlayers);
         // Contagem de Pontos   |TO DO|
         // Checagem de Vitoria  |TO DO|
     // Fim de Jogo              |TO DO|
