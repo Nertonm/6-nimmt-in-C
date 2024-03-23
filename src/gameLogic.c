@@ -68,10 +68,10 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
         int dif = abs(cartaAux.num - (*cartaPtr).num);
         if(dif < selec){
             selec = dif;
-            insert = numMesa;
+            insert = i;
         }
     }
-    filaInserir(mesa[insert],*cartaPtr);
+    filaInserir(mesa[insert],cartaAux);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa){
     printMesa(mesa, numMesa);
@@ -83,7 +83,6 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
     acessarIndice(baralhoJogadores[0],selec,cartaPtr);
     removerIndince(baralhoJogadores[0],selec);
-    printMesa(mesa, numMesa);
     insertMesa(mesa,cartaPtr,numMesa);
-    free(cartaPtr);
+    printMesa(mesa, numMesa);
 };
