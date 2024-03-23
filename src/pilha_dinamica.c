@@ -52,6 +52,11 @@ void pilhaEmbaralhar(Pilha* baralho){
         for (int i = 0; i < cartas; i++){
             Carta aux;
             aux.num = i + 1;
+            aux.boi = 1;
+            aux.boi = (aux.num % 10) ? (aux.boi + 2) : aux.boi;
+            aux.boi = (aux.num % 5) ? (aux.boi + 1) : aux.boi;
+            aux.boi = (aux.num % 11) ? (aux.boi + 4) : aux.boi;
+            aux.boi = (aux.num % 55) ? (aux.boi + 1) : aux.boi;
             pilhaInserir(baralho,aux);
         }
     // Embaralhando

@@ -48,8 +48,8 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
         aux = aux->prx;
         i++;
     }
-    if (aux && i+1 == indice){
-        *carta = aux->data;
+    if (aux){
+        carta->num = aux->data.num;
         return 1;
     }
     return 0;
@@ -58,14 +58,15 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
 int removerIndince(Lista* hand, int indice){
     Elemento aux = hand->ini;
     int i = 0;
-    while (i < indice && aux->prx){
-        aux = aux->prx; i++;
+    while (i < indice && aux){
+        aux = aux->prx;
+        i++;
         if (i + 1 == indice){
-            if(hand->ini =  hand->fim)
+            if(hand->ini == hand->fim)
                 free(aux->prx);
             Elemento aux2 = aux->prx;
             aux2 = aux2->prx;
-            free(aux2->prx);
+            free(aux2);
             return 1;
         }
     }

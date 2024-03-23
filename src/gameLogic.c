@@ -58,32 +58,42 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
-    int insert = -1;
-    int selec = 104;
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, ints points){
+    int insert = -1, selec = 104;
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
-        struct fila* tmp = mesa[i];
-        filaAcessar(tmp,cartaPtr);
-        int dif = cartaAux.num - (*cartaPtr).num;
-        if(dif < selec){
+        filaAcessar(mesa[i],cartaPtr);
+        int dif = abs(cartaAux.num - cartaPtr->num);
+        if(dif < selec && cartaAux.num > cartaPtr->num){
             selec = dif;
             insert = i;
         }
     }
-    if (insert != -1)
+    if(insert != -1){
         filaInserir(mesa[insert], cartaAux);
+        return;
+    }
+    scanf("%i",&insert); insert--;
+    // FALTA AS VERIFICAções
+    int tam = filaTamanho(mesa[insert]);
+    for(int i = 0; i < tam; i++){
+        filaRemover(mesa[insert],cartaPtr);
+        points += cartaPtr->boi;
+    }
+    filaInserir(mesa[insert], cartaAux);
+
 };
-void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa){
+void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int* points){
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
     int selec;
     printf("\n");
     do scanf("%i",&selec);
     while (selec < 1 || selec > 10);
+    selec = selec - 1;
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
     acessarIndice(baralhoJogadores[0],selec,cartaPtr);
     removerIndince(baralhoJogadores[0],selec);
-    insertMesa(mesa,cartaPtr,numMesa);
+    insertMesa(mesa,cartaPtr,numMesa, points[0]);
     printMesa(mesa, numMesa);
 };
