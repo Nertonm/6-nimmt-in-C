@@ -123,11 +123,11 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
      // Round Logic
      for (int i = 0; i < 10; i++){
         int isPlayer = 1;
-                // Verificação  |TO DO|
         // Printing
         printMesa(mesa, numMesa);
         printMao(baralhoJogadores);
-        // Jogar
+        // Rounds
+            // Player Choice
             int selec;
             do{
                 printf("\n");
@@ -137,7 +137,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 scanf("%i",&selec);
             }while (selec < 1 || selec > 10);
             selec = selec - 1;
-    Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
+            Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
             // Player
                 acessarIndice(baralhoJogadores[0],selec,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
