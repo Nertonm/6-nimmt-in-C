@@ -20,12 +20,13 @@ int main()
             Lista* baralhoJogadores[numPlayers];
             Lista* pontosJogadores[numPlayers];
             Fila *mesa[numMesa];
-            iniGame(baralhoJogadores, monteCartas, numPlayers);
+            iniGame(baralhoJogadores, monteCartas, numPlayers, pontosJogadores);
         // Iniciando a mesa
             iniMesa(mesa,monteCartas,numMesa);
-    // Loop do Jogo
-            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, numPlayers);
+        // Loop do Jogo
+            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, numPlayers,pontosJogadores);
         // Contagem de Pontos   |TO DO|
+            endGame(pontosJogadores, numPlayers);
         // Checagem de Vitoria  |TO DO|
     // Fim de Jogo              |TO DO|
         // Dizer Pontuação      |TO DO|
