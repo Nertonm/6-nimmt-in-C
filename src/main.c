@@ -22,16 +22,10 @@ int main()
             int points[numPlayers];
             Fila *mesa[numMesa];
             iniGame(baralhoJogadores, monteCartas, numPlayers);
-            iniMesa(mesa,monteCartas,numMesa);
         // Iniciando a mesa
+            iniMesa(mesa,monteCartas,numMesa);
+    // Loop do Jogo
             loopGame(baralhoJogadores,monteCartas,mesa,numMesa, points, numPlayers);
-    // Loop do Jogo             |TO DO|
-            //loopGame()
-        // Round Logic          |TO DO|
-            // Jogar            |TO DO|
-                // Players      |TO DO|
-                // Bots         |TO DO|
-                // Verificação  |TO DO|
         // Contagem de Pontos   |TO DO|
         // Checagem de Vitoria  |TO DO|
     // Fim de Jogo              |TO DO|

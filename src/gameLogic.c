@@ -90,7 +90,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
         }
     }
     if(insert != -1){
-        if (tam = 5){
+        if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert],cartaPtr);
                 points += cartaPtr->boi;
@@ -116,31 +116,37 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
     filaInserir(mesa[insert], cartaAux);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int* points, int numPlayers){
-    printMesa(mesa, numMesa);
-    printMao(baralhoJogadores);
-    int selec;
-    do{
-        printf("\n");
-        printf("========================================\n");
-        printf("|           Qual carta jogar ?         |\n");
-        printf("========================================\n");
-        scanf("%i",&selec);
-    }while (selec < 1 || selec > 10);
-    selec = selec - 1;
+     // Round Logic
+     for (int i = 0; i < 10; i++){
+                // Verificação  |TO DO|
+        // Printing
+        printMesa(mesa, numMesa);
+        printMao(baralhoJogadores);
+        // Jogar
+            int selec;
+            do{
+                printf("\n");
+                printf("========================================\n");
+                printf("|           Qual carta jogar ?         |\n");
+                printf("========================================\n");
+                scanf("%i",&selec);
+            }while (selec < 1 || selec > 10);
+            selec = selec - 1;
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
-    acessarIndice(baralhoJogadores[0],selec,cartaPtr);
-    removerIndince(baralhoJogadores[0],selec);
-    insertMesa(mesa,cartaPtr,numMesa, points[0]);
-    printf("========================================\n");
-    printf("|           Mesa apos jogadas          |\n");
-    printf("========================================\n");
-    //Jogada dos Bots
-    for (int i = 1; i < numPlayers; i++){
-            selec = (rand() % 10) + 1;
-            acessarIndice(baralhoJogadores[i],selec,cartaPtr);
-            removerIndince(baralhoJogadores[i],selec);
-            // Fazer um vetor com as cartas mais baixas para jogar em sequencia
-            insertMesa(mesa,cartaPtr,numMesa, points[i]);
+            // Player
+                acessarIndice(baralhoJogadores[0],selec,cartaPtr);
+                removerIndince(baralhoJogadores[0],selec);
+                insertMesa(mesa,cartaPtr,numMesa, points[0]);
+                printf("========================================\n");
+                printf("|           Mesa apos jogadas          |\n");
+                printf("========================================\n");
+            // Bots
+                for (int i = 1; i < numPlayers; i++){
+                        selec = (rand() % 10) + 1;
+                        acessarIndice(baralhoJogadores[i],selec,cartaPtr);
+                        removerIndince(baralhoJogadores[i],selec);
+                        // Fazer um vetor com as cartas mais baixas para jogar em sequencia
+                        insertMesa(mesa,cartaPtr,numMesa, points[i]);
+                }
     }
-    printMesa(mesa, numMesa);
 };
