@@ -51,8 +51,8 @@ int filaRemover(Fila* fila, Carta* carta){
 
 int filaAcessar(Fila *fila, Carta *carta){
     if (carta && fila){
-        Elemento aux = fila->ini;
-        fila->ini = fila->ini->prx;
+        //SAPECAGENS
+        Elemento aux = fila->fim;
         *carta = aux->data;
         return 1;
     }

@@ -1,17 +1,10 @@
 #include "gameLogic.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "fila_dinamica.h"
 
 int msgIni(){
-    // Estilo da Arte ASCII e de 40 carcters//
-    printf("                                   \n");
-    printf("#     #    #    # # #    # #    # ##### \n");
-    printf("#          ##   # # ##  ## ##  ##   #   \n");
-    printf("######     # #  # # # ## # # ## #   #   \n");
-    printf("              |   /|   |  |   /  | \n");
-    printf("              |  / |  /   |  /\  | \n");
-    printf("              ###  ###    ###  ###         \n");
-    printf("              ###  ###    ###  ###         \n");
+
     // Selecionando o Numero de Jogadores
         int numPlayers = 2;
         do {
@@ -64,6 +57,21 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     exibir(baralhoJogadores[0]);
 };
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
+    int insert = 0;
+    int selec = 104;
+    Carta cartaAux = *cartaPtr;
+    for (int i = 0; i < numMesa; i++){
+        struct fila* tmp = mesa[i];
+        filaAcessar(mesa[i],cartaPtr);
+        int dif = abs(cartaAux.num - (*cartaPtr).num);
+        if(dif < selec){
+            selec = dif;
+            insert = numMesa;
+        }
+    }
+    filaInserir(mesa[insert],*cartaPtr);
+};
 void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa, int numMesa){
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
@@ -73,5 +81,5 @@ void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa, int nu
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
     acessarIndice(baralhoJogadores[0],selec,cartaPtr);
     removerIndince(baralhoJogadores[0],selec);
-
+    insertMesa(mesa,cartaPtr,numMesa);
 };
