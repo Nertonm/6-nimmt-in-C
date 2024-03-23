@@ -61,11 +61,15 @@ int filaAcessar(Fila *fila, Carta *carta){
 
 int filaExibir(Fila* fila){
     Elemento aux = fila->ini;
-        while(aux){
+
+    if(aux){
+            while(aux){
             printf("[%i]->",aux->data.num);
             aux = aux->prx;
-        }
-        return 1;
+            }
+            return 1;
+    }
+    return 0;
 };
 
 int filaTamanho(Fila *fila){

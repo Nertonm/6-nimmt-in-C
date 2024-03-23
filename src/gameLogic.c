@@ -48,6 +48,7 @@ void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         free(cartaPtr);
 };
 void printMesa(struct fila **mesa, int numMesa){
+    numMesa = 4;
     for (int i = 0; i < numMesa; i++){
          filaExibir(mesa[i]);
          printf("\n");
@@ -72,7 +73,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
     }
     filaInserir(mesa[insert],*cartaPtr);
 };
-void loopGame(Lista* baralhoJogadores[], Pilha* monteCartas, Fila** mesa, int numMesa){
+void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa){
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
     int selec;

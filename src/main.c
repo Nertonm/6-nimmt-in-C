@@ -22,7 +22,7 @@ int main()
             iniGame(baralhoJogadores, monteCartas, numPlayers);
         // Iniciando a mesa
             Fila *mesa[numMesa];
-            iniMesa(mesa, monteCartas, numMesa);
+            loopGame(baralhoJogadores,monteCartas,mesa,numMesa);
     // Loop do Jogo             |TO DO|
             //loopGame()
         // Round Logic          |TO DO|
