@@ -91,7 +91,13 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
         filaInserir(mesa[insert], cartaAux);
         return;
     }
-    scanf("%i",&insert); insert--;
+        do{
+            printf("========================================\n");
+            printf("|           Qual Fila puxar  ?         |\n");
+            printf("========================================\n");
+            scanf("%i",&insert);
+        } while (insert < 1|| insert > 4);
+    insert--;
     // FALTA AS VERIFICAções
     int tam = filaTamanho(mesa[insert]);
     for(int i = 0; i < tam; i++){
@@ -99,19 +105,32 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int points){
         points += cartaPtr->boi;
     }
     filaInserir(mesa[insert], cartaAux);
-
 };
-void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int* points){
+void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int* points, int numPlayers){
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
     int selec;
-    printf("\n");
-    do scanf("%i",&selec);
-    while (selec < 1 || selec > 10);
+    do{
+        printf("\n");
+        printf("========================================\n");
+        printf("|           Qual carta jogar ?         |\n");
+        printf("========================================\n");
+        scanf("%i",&selec);
+    }while (selec < 1 || selec > 10);
     selec = selec - 1;
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
     acessarIndice(baralhoJogadores[0],selec,cartaPtr);
     removerIndince(baralhoJogadores[0],selec);
     insertMesa(mesa,cartaPtr,numMesa, points[0]);
+    printf("========================================\n");
+    printf("|           Mesa apos jogadas          |\n");
+    printf("========================================\n");
+    //Jogada dos Bots
+    for (int i = 1; i < numPlayers; i++){
+            selec = (rand() % 10) + 1;
+            acessarIndice(baralhoJogadores[1],selec,cartaPtr);
+            removerIndince(baralhoJogadores[1],selec);
+            insertMesa(mesa,cartaPtr,numMesa, points[i]);
+    }
     printMesa(mesa, numMesa);
 };

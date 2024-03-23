@@ -82,8 +82,8 @@ int exibir(Lista* mao){
             printf("[%i]->",aux->data.num);
             aux = aux->prx;
         }
-        printf("\n      ");
+        printf("\n    ");
         for(int i = 0; i < count; i++){
-            printf("(%d)   ",i+1);
+            printf(" (%d)  ",i+1);
         }
 };

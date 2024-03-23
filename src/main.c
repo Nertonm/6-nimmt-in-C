@@ -24,7 +24,7 @@ int main()
             iniGame(baralhoJogadores, monteCartas, numPlayers);
             iniMesa(mesa,monteCartas,numMesa);
         // Iniciando a mesa
-            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, points);
+            loopGame(baralhoJogadores,monteCartas,mesa,numMesa, points, numPlayers);
     // Loop do Jogo             |TO DO|
             //loopGame()
         // Round Logic          |TO DO|
