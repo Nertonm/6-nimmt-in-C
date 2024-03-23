@@ -31,9 +31,10 @@ int pilhaInserir(Pilha* baralho, Carta insert){
 
 int pilhaRemover (Pilha* baralho, Carta *puxada){
     if (baralho->top){
-        *puxada = baralho->top->data;
+
         Elemento aux = baralho->top;
-        baralho->top = baralho->top->prx;
+        *puxada = aux->data;
+        baralho->top = aux->prx;
         free(aux);
         return 1;
     }
@@ -60,7 +61,7 @@ void pilhaEmbaralhar(Pilha* baralho){
             pilhaInserir(baralho,aux);
         }
     // Embaralhando
-        Elemento aux = baralho->top;
+        Elemento aux = baralho->top; //aux recebe o topo
         for (int i = 0; i < cartas; i++){
             Elemento aux2 = baralho->top;
             int random = rand()%(103);
@@ -70,5 +71,5 @@ void pilhaEmbaralhar(Pilha* baralho){
             aux->data = aux2->data;
             aux2->data = swp;
         }
-        return;
+
 };
