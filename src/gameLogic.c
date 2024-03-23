@@ -109,7 +109,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer){
     } while (insert < 1|| insert > 4);
     insert--;
     }else{
-        insert = (rand() % 4) + 1;
+        insert = (rand() % 4);
     }
     // FALTA AS VERIFICAções
     tam = filaTamanho(mesa[insert]);
