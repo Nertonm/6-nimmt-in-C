@@ -94,8 +94,12 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista* 
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert],cartaPtr);
+<<<<<<< HEAD
                 inserirOrdenado(pontosJogadores,*cartaPtr);
                 //points += cartaPtr->boi;
+=======
+                inserirOrdenado(pontosJogadores, *cartaPtr);
+>>>>>>> 86c31f02f4fb29f297bbd73d82aff187385a2b62
             }
         }
         if (mesa)
@@ -139,7 +143,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 printf("========================================\n");
                 scanf("%i",&selec);
             }while (selec < 1 || selec > 10);
-            selec = selec - 1;
+            selec--;
             Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
             // Player
                 acessarIndice(baralhoJogadores[0],selec,cartaPtr);
@@ -153,8 +157,12 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             // Bots
                 isPlayer = 0;
                 for (int i = 1; i < numPlayers; i++){
+<<<<<<< HEAD
                         vet[i]=cartaPtr;
                         selec = (rand() % 10) + 1;
+=======
+                        selec = (rand() % 10) + 1 - i;
+>>>>>>> 86c31f02f4fb29f297bbd73d82aff187385a2b62
                         acessarIndice(baralhoJogadores[i],selec,cartaPtr);
                         removerIndince(baralhoJogadores[i],selec);
                         // Fazer um vetor com as cartas mais baixas para jogar em sequencia
