@@ -9,12 +9,12 @@ struct fila{
 };
 
 Fila* filaCriar(void){
-    Fila* nova = (Fila*)malloc(sizeof(Fila));
-    if (nova){
-        nova->ini = NULL;
-        nova->fim = NULL;
-        nova->qtd = 0;
-        return nova;
+    Fila* fila = (Fila*)malloc(sizeof(Fila));
+    if (fila){
+        fila->ini = NULL;
+        fila->fim = NULL;
+        fila->qtd = 0;
+        return fila;
     }
     return NULL;
 };
