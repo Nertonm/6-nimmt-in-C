@@ -56,24 +56,27 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
 }
 
 int removerIndince(Lista* hand, int indice){
-    if (!hand->ini){
+    if(hand->ini){
         Elemento aux = hand->ini;
+        if (indice == 0){
+            hand->ini = hand->ini->prx;
+            free(aux);
+            return 1;
+        }
         int i = 0;
-        while (i < indice && aux){
+        while (i < indice -1 && aux){
             aux = aux->prx;
             i++;
-            if (i + 1 == indice){
-                if(hand->ini == hand->fim)
-                    free(aux->prx);
+        }
+        if (aux && aux->prx){
                 Elemento aux2 = aux->prx;
-                aux2 = aux2->prx;
+                aux->prx = aux2->prx;
                 free(aux2);
                 return 1;
-            }
         }
     }
     return 0;
-}
+};
 
 int exibir(Lista* mao){
         int count = 0;

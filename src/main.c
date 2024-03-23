@@ -9,7 +9,6 @@ Estruturas necessárias no main:
 - Baralho (Pilha *), inicia com 104 cartas embaralhadas, depois distribui 4 para mesa e 10 para cada jogador
 - Coleção dos Jogadores (Lista **), vetor de Listas contendo as cartas adquiridas por cada jogador, use alocação dinâmica
 */
-// Estilo da Arte ASCII e de 40 carcters//
 int main()
 {
     // Inicio do Jogo
