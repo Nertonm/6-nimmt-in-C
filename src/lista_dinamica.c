@@ -71,7 +71,7 @@ int removerIndince(Lista* hand, int indice){
     if(hand->ini){
         Elemento aux = hand->ini;
         if (indice == 0){
-            hand->ini = hand->ini->prx;
+            hand->ini = aux->prx;
             free(aux);
             return 1;
         }
@@ -90,9 +90,9 @@ int removerIndince(Lista* hand, int indice){
     return 0;
 };
 
-int exibir(Lista* mao){
+int exibir(Lista* hand){
         int count = 0;
-        Elemento aux = mao->ini;
+        Elemento aux = hand->ini;
         printf("Your Colection:\nHand:");
         while(aux){
             count++;
