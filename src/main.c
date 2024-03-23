@@ -19,9 +19,10 @@ int main()
         // Iniciando a mão dos Jogadores
             Pilha* monteCartas = pilhaCriar();
             Lista* baralhoJogadores[numPlayers];
-            iniGame(baralhoJogadores, monteCartas, numPlayers);
-        // Iniciando a mesa
             Fila *mesa[numMesa];
+            iniGame(baralhoJogadores, monteCartas, numPlayers);
+            iniMesa(mesa,monteCartas,numMesa);
+        // Iniciando a mesa
             loopGame(baralhoJogadores,monteCartas,mesa,numMesa);
     // Loop do Jogo             |TO DO|
             //loopGame()

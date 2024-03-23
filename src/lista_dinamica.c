@@ -38,14 +38,20 @@ int inserirOrdenado(Lista* hand, Carta nova){
 };
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){
-    if (hand && indice > 0){
-        Elemento aux= hand->ini;
-        for (int i = 0; i < indice && aux ; i++)
-            aux = aux->prx;
+    if (!hand || indice <= 0){
+        return 0;
+        printf("Invalid Number");
+    }
+    int i = 0;
+    Elemento aux = hand->ini;
+    while (aux && i < indice){
+        aux = aux->prx;
+        i++;
+    }
+    if (aux && i+1 == indice){
         *carta = aux->data;
         return 1;
     }
-    printf("Invalid Number");
     return 0;
 }
 
@@ -59,7 +65,7 @@ int removerIndince(Lista* hand, int indice){
                 free(aux->prx);
             Elemento aux2 = aux->prx;
             aux2 = aux2->prx;
-            free(aux->prx);
+            free(aux2->prx);
             return 1;
         }
     }

@@ -25,8 +25,7 @@ int filaInserir(Fila* fila, Carta data){
     novo->prx = NULL;
     if (!fila->ini){
         fila->ini = novo;
-        fila->fim = NULL;
-        fila->ini->prx = fila->fim;
+        fila->fim = novo;
         fila->qtd++;
         return 1;
     }
@@ -49,11 +48,10 @@ int filaRemover(Fila* fila, Carta* carta){
     return 0;
 };
 
-int filaAcessar(Fila *fila, Carta *carta){
-    if (carta && fila){
+int filaAcessar(Fila *fila, Carta *cartaPtr){
+    if (cartaPtr && fila){
         //SAPECAGENS
-        Elemento aux = fila->fim;
-        *carta = aux->data;
+        *cartaPtr = fila->fim->data;
         return 1;
     }
     return 0;

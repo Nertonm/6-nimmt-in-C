@@ -64,7 +64,7 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa){
     Carta cartaAux = *cartaPtr;
     for (int i = 0; i < numMesa; i++){
         struct fila* tmp = mesa[i];
-        filaAcessar(mesa[i],cartaPtr);
+        filaAcessar(tmp,cartaPtr);
         int dif = abs(cartaAux.num - (*cartaPtr).num);
         if(dif < selec){
             selec = dif;
@@ -77,10 +77,13 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     printMesa(mesa, numMesa);
     printMao(baralhoJogadores);
     int selec;
+    printf("\n");
     do scanf("%i",&selec);
     while (selec < 1 || selec > 10);
     Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
     acessarIndice(baralhoJogadores[0],selec,cartaPtr);
     removerIndince(baralhoJogadores[0],selec);
+    printMesa(mesa, numMesa);
     insertMesa(mesa,cartaPtr,numMesa);
+    free(cartaPtr);
 };
