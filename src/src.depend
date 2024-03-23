@@ -123,30 +123,36 @@
 
 1711134837 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/elemento.h
 
-1711122433 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\fila_dinamica.c
+1711159542 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\fila_dinamica.c
 	"fila_dinamica.h"
-
-1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\fila_dinamica.h
-	"cartaStruct.h"
-	"elemento.h"
-
-1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\cartastruct.h
 	<stdio.h>
 	<stdlib.h>
 
-1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\elemento.h
-
-1711122433 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\lista_dinamica.c
-	"lista_dinamica.h"
-
-1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\lista_dinamica.h
+1711149898 c:\users\luana teles\documents\github\6-nimmt-in-c\src\fila_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
 
-1711122433 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\pilha_dinamica.c
-	"pilha_dinamica.h"
+1711149898 c:\users\luana teles\documents\github\6-nimmt-in-c\src\cartastruct.h
+	<stdio.h>
+	<stdlib.h>
 
-1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\pilha_dinamica.h
+1711149898 c:\users\luana teles\documents\github\6-nimmt-in-c\src\elemento.h
+
+1711164071 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\lista_dinamica.c
+	"lista_dinamica.h"
+	<stdio.h>
+	<stdlib.h>
+
+1711149898 c:\users\luana teles\documents\github\6-nimmt-in-c\src\lista_dinamica.h
+	"cartaStruct.h"
+	"elemento.h"
+
+1711164071 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\pilha_dinamica.c
+	"pilha_dinamica.h"
+	<stdio.h>
+	<stdlib.h>
+
+1711149898 c:\users\luana teles\documents\github\6-nimmt-in-c\src\pilha_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
 
@@ -160,17 +166,17 @@
 	"lista_dinamica.h"
 	"pilha_dinamica.h"
 
-1711123022 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\main.c
+1711164071 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\main.c
 	"gameLogic.h"
+	<stdio.h>
+	<stdlib.h>
 
 1711122433 c:\users\luana teles\documents\github\6-nimmt-in-c\src\main.h
 	<stdio.h>
 	<stdlib.h>
 	"gameLogic.h"
 
-1711123246 c:\users\luana teles\documents\github\6-nimmt-in-c\src\gamelogic.h
-	<stdio.h>
-	<stdlib.h>
+1711164071 c:\users\luana teles\documents\github\6-nimmt-in-c\src\gamelogic.h
 	"fila_dinamica.h"
 	"lista_dinamica.h"
 	"pilha_dinamica.h"
