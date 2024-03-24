@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fila_dinamica.h"
+#include <time.h>
 
 int msgIni(){
 
@@ -118,17 +119,20 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista* 
     filaInserir(mesa[insert], cartaAux);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
-
      // Round Logic
-     for (int i = 0; i < 10; i++){
-        int isPlayer = 1;
+    srand(time(NULL));
+    int selec, isPlayer;
+    Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
+    Lista *ordemCartas = listaCriar();
+    for (int i = 0; i < 10; i++){
+        isPlayer = 1;
         // Printing
         printMesa(mesa, numMesa);
         printMao(baralhoJogadores);
 
         // Rounds
             // Player Choice
-            int selec;
+            selec = 0;
             do{
                 printf("\n");
                 printf("========================================\n");
@@ -137,12 +141,11 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 scanf("%i",&selec);
             }while (selec < 1 || selec > 10);
             selec--;
-            Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
             // Player
                 acessarIndice(baralhoJogadores[0],selec,cartaPtr);
+                cartaPtr->player = 0;
                 removerIndince(baralhoJogadores[0],selec);
-                int *vet[numPlayers];
-               vet[0]=cartaPtr;
+                inserirOrdenado(ordemCartas,*cartaPtr);
                 insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[0]);
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
@@ -150,13 +153,14 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             // Bots
                 isPlayer = 0;
                 for (int i = 1; i < numPlayers; i++){
-                        vet[i]=cartaPtr;
                         selec = (rand() % 10) + 1 - i;
                         acessarIndice(baralhoJogadores[i],selec,cartaPtr);
+                        cartaPtr->player = i;
+                        inserirOrdenado(ordemCartas,*cartaPtr);
                         removerIndince(baralhoJogadores[i],selec);
-                        // Fazer um vetor com as cartas mais baixas para jogar em sequencia
                         insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[i]);
                 }
+
     }
 };
 

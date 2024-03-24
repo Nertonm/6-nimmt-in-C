@@ -9,10 +9,10 @@ struct pilha{
 
 Pilha* pilhaCriar(){
     Pilha* baralho = (Pilha*)malloc(sizeof(Pilha));
+    if (!baralho)
+        return NULL;
     baralho->qtd = 0;
-    if (baralho)
-        return baralho;
-    return NULL;
+    return baralho;
 };
 
 int pilhaInserir(Pilha* baralho, Carta insert){
@@ -25,6 +25,7 @@ int pilhaInserir(Pilha* baralho, Carta insert){
                 baralho->qtd++;
                 return 1;
             }
+            return 0;
     }
     return 0;
 };
@@ -33,7 +34,7 @@ int pilhaRemover (Pilha* baralho, Carta *puxada){
     if (baralho->top){
         Elemento aux = baralho->top;
         *puxada = aux->data;
-        baralho->qtd;
+        baralho->qtd--;
         baralho->top = aux->prx;
         free(aux);
         return 1;

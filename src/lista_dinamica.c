@@ -82,7 +82,7 @@ int removerIndince(Lista* hand, int indice){
             return 1;
         }
         int i = 0;
-        while (i < indice -1 && aux){
+        while (i < indice -1 && aux->prx){
             aux = aux->prx;
             i++;
         }
@@ -98,7 +98,7 @@ int removerIndince(Lista* hand, int indice){
 
 int exibir(Lista* hand){
     if (!hand || !hand->ini)
-        return;
+        return 0;
     int count = 0;
     Elemento aux = hand->ini;
     while(aux){
