@@ -21,6 +21,8 @@ Lista* listaCriar(){
 int inserirOrdenado(Lista* hand, Carta nova){
     // Alocando o Novo Elemento
         Elemento novo = (Elemento) malloc(sizeof(struct elemento));
+        if (!novo)
+            return 0;
         novo->data = nova;
         novo->prx = NULL;
     //Caso de Primeiro Elemento
@@ -29,16 +31,20 @@ int inserirOrdenado(Lista* hand, Carta nova){
             hand->ini = novo;
             if (!hand->fim)
                 hand->fim = novo;
-            //hand->ini->prx = hand->fim;
             hand->qtd++;
             return 1;
         }
+        // Procurando a Posição correta de inserção
         Elemento tmp = hand->ini;
-        Elemento ant= NULL;
-    // Procurando a Posição correta de inserção
-        while (tmp && tmp->data.num < novo->data.num){
+        Elemento ant = NULL;
+        while (tmp && tmp->data.num < novo->data.num && tmp->data.num != novo->data.num){
+            //(tmp && tmp->data.num < novo->data.num){
             ant = tmp;
             tmp = tmp->prx;
+        }
+        if (tmp && tmp->data.num == novo->data.num) {
+            free(novo);
+            return 0; // Erro ou não inserir
         }
         hand->qtd++;
         ant->prx = novo;
@@ -68,9 +74,9 @@ int acessarIndice(Lista* hand, int indice, Carta* carta){
 }
 
 int removerIndince(Lista* hand, int indice){
-    if(hand->ini){
+    if(hand->ini && hand){
         Elemento aux = hand->ini;
-        if (indice == 0){
+        if (!indice){
             hand->ini = aux->prx;
             free(aux);
             return 1;
@@ -80,27 +86,28 @@ int removerIndince(Lista* hand, int indice){
             aux = aux->prx;
             i++;
         }
-        if (aux && aux->prx){
-                Elemento aux2 = aux->prx;
-                aux->prx = aux2->prx;
-                free(aux2);
-                return 1;
+        if(aux->prx){
+            Elemento aux2 = aux->prx;
+            aux->prx = aux2->prx;
+            free(aux2);
+            return 1;
         }
     }
     return 0;
 };
 
 int exibir(Lista* hand){
-        int count = 0;
-        Elemento aux = hand->ini;
-        printf("Your Colection:\nHand:");
-        while(aux){
-            count++;
-            printf("[%i]->",aux->data.num);
-            aux = aux->prx;
-        }
-        printf("\n    ");
-        for(int i = 0; i < count; i++){
-            printf(" (%d)  ",i+1);
-        }
+    if (!hand || !hand->ini)
+        return;
+    int count = 0;
+    Elemento aux = hand->ini;
+    while(aux){
+        count++;
+        printf("[%i]->",aux->data.num);
+        aux = aux->prx;
+    }
+    printf("\n    ");
+    for(int i = 0; i < count; i++){
+        printf(" (%d)  ",i+1);
+    }
 };

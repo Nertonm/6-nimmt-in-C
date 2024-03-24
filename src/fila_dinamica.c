@@ -20,24 +20,27 @@ Fila* filaCriar(void){
 };
 
 int filaInserir(Fila* fila, Carta data){
-    Elemento novo = (Elemento) malloc(sizeof(struct elemento));
-    novo->data = data;
-    novo->prx = NULL;
-    if (!fila->ini){
-        fila->ini = novo;
-        fila->fim = novo;
-        fila->qtd++;
-        return 1;
+    if (fila){
+        Elemento novo = (Elemento) malloc(sizeof(struct elemento));
+        if (novo){
+            novo->data = data;
+            novo->prx = NULL;
+            if (!fila->ini){
+                fila->ini = novo;
+                fila->fim = novo;
+            } else {
+                fila->fim->prx = novo;
+                fila->fim = novo;
+            }
+            fila->qtd++;
+            return 1;
+        }
     }
-    fila->fim->prx = novo;
-    fila->fim = novo;
-    fila->fim->prx = NULL;
-    fila->qtd++;
-    return 1;
+    return 0;
 };
 
 int filaRemover(Fila* fila, Carta* carta){
-    if (carta && fila){
+    if (carta && fila && fila->qtd){
         Elemento aux = fila->ini;
         fila->ini = fila->ini->prx;
         fila->qtd--;
@@ -50,16 +53,17 @@ int filaRemover(Fila* fila, Carta* carta){
 
 int filaAcessar(Fila *fila, Carta *cartaPtr){
     if (cartaPtr && fila){
-        //SAPECAGENS
-        *cartaPtr = fila->fim->data;
-        return 1;
+        if(fila->qtd > 0){
+            *cartaPtr = fila->fim->data;
+            return 1;
+        }
+        return 0;
     }
     return 0;
 };
 
 int filaExibir(Fila* fila){
     Elemento aux = fila->ini;
-
     if(aux){
             while(aux){
             printf("[%i]->",aux->data.num);

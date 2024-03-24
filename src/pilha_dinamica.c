@@ -31,9 +31,9 @@ int pilhaInserir(Pilha* baralho, Carta insert){
 
 int pilhaRemover (Pilha* baralho, Carta *puxada){
     if (baralho->top){
-
         Elemento aux = baralho->top;
         *puxada = aux->data;
+        baralho->qtd;
         baralho->top = aux->prx;
         free(aux);
         return 1;

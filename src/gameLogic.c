@@ -8,24 +8,24 @@ int msgIni(){
     // Selecionando o Numero de Jogadores
         int numPlayers = 2;
         do {
-            printf("                                    .@                                                                  \n");
-            printf("                                     #@#          .::@@@@-           *+                                 \n");
-            printf("                                      *@@@#-  -=-:    -+# +@+          #@.                              \n");
-            printf("                                        .@@@@@@@@@           :@*         @@-                            \n");
-            printf("                                           *@@@@@@-             #@#+.  :@@@@                            \n");
-            printf("                                          =@  .-##   :*           . @@@@@@@*                            \n");
-            printf("                                       .@-       -#@-             :@@@@@@                               \n");
-            printf("                                      +@      *#       @@@.        @@                                   \n");
-            printf("                                     @@       #         @ +@       @=                                   \n");
-            printf("                                      =@@    ::     :    @@@@     .@#                                   \n");
-            printf("                                        #@.   =     #        .      =@                                  \n");
-            printf("                                         :@.  =     @        =       :@-                                \n");
-            printf("                                           @# :=   =@              +*.:@@#                              \n");
-            printf("                                             -@#=   :#.          *-       @=                            \n");
-            printf("                                               +@@+       :   +:  -@  *@.-@.                            \n");
-            printf("                                                 : -*@@@#=:  ##  =  @:  .-@                             \n");
-            printf("                                                           -#@@   :     -@                              \n");
-            printf("                                                              @@@@@@@@@@#                               \n");
+            printf(" 1.@                                                                  \n");
+            printf(" 1 #@#          .::@@@@-           *+                                 \n");
+            printf(" 1  *@@@#-  -=-:    -+# +@+          #@.                              \n");
+            printf(" 1    .@@@@@@@@@           :@*         @@-                            \n");
+            printf(" 1       *@@@@@@-             #@#+.  :@@@@                            \n");
+            printf(" 1      =@  .-##   :*           . @@@@@@@*                            \n");
+            printf(" 1   .@-       -#@-             :@@@@@@                               \n");
+            printf(" 1  +@      *#       @@@.        @@                                   \n");
+            printf(" 1 @@       #         @ +@       @=                                   \n");
+            printf(" 1  =@@    ::     :    @@@@     .@#                                   \n");
+            printf(" 1    #@.   =     #        .      =@                                  \n");
+            printf(" 1     :@.  =     @        =       :@-                                \n");
+            printf(" 1       @# :=   =@              +*.:@@#                              \n");
+            printf(" 1         -@#=   :#.          *-       @=                            \n");
+            printf(" 1           +@@+       :   +:  -@  *@.-@.                            \n");
+            printf(" 1             : -*@@@#=:  ##  =  @:  .-@                             \n");
+            printf(" 1                       -#@@   :     -@                              \n");
+            printf(" 1                          @@@@@@@@@@#                               \n");
             printf("========================================\n");
             if (numPlayers < 2 || numPlayers > 10)
                 printf("|           Selecione Novamente        |\n");
@@ -39,22 +39,18 @@ int msgIni(){
 void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers, Lista* pontosJogadores[]){
     // Declaração de Variaveis
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
-            int ROUNDS=10;          /* Numero max de partidas */
+            Carta carta;
     // Inicialização do Jogo
-            pilhaEmbaralhar(monteCartas);
             for (int i = 0; i < numPlayers; i++){
                 baralhoJogadores[i] = listaCriar();
                 pontosJogadores[i] = listaCriar();
             }
-            Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
             for (int i = 0; i < numPlayers ; i++){
                 for (int j = 0; j < cartasInicias; j++){
-                    pilhaRemover(monteCartas, cartaPtr);
-                    Carta puxada = *cartaPtr;
-                    inserirOrdenado(baralhoJogadores[i], puxada);
+                    pilhaRemover(monteCartas, &carta);
+                    inserirOrdenado(baralhoJogadores[i], carta);
                 }
             }
-        free(cartaPtr);
 };
 void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         for (int i = 0; i < numMesa; i++)
@@ -76,6 +72,7 @@ void printMesa(struct fila **mesa, int numMesa){
     return;
 };
 void printMao(struct lista** baralhoJogadores){
+    printf("Your Colection:\nHand:");
     exibir(baralhoJogadores[0]);
 };
 void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista* pontosJogadores){
@@ -128,6 +125,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
         // Printing
         printMesa(mesa, numMesa);
         printMao(baralhoJogadores);
+
         // Rounds
             // Player Choice
             int selec;
