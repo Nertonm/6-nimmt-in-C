@@ -43,39 +43,39 @@
 
 1708827326 /home/nerton/Documentos/6-nimmt-in-C/src/cartaStruct.h
 
-1711339918 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
+1711342645 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.c
 	"lista_dinamica.h"
 	<stdio.h>
 	<stdlib.h>
 
-1711147563 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/lista_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
 
-1711151235 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/cartaStruct.h
 	<stdio.h>
 	<stdlib.h>
 
-1711323740 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
+1711342499 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/main.c
 	"gameLogic.h"
 	<stdio.h>
 	<stdlib.h>
 
-1711334024 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
+1711342499 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.c
 	"fila_dinamica.h"
 	<stdio.h>
 	<stdlib.h>
 
-1711137145 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/fila_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
 
-1711319988 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.c
+1711342499 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.c
 	"pilha_dinamica.h"
 	<stdio.h>
 	<stdlib.h>
 
-1711138922 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/pilha_dinamica.h
 	"cartaStruct.h"
 	"elemento.h"
 
@@ -121,7 +121,7 @@
 
 1711115443 /home/nerton/preservativo/6-nimmt-in-C/src/elemento.h
 
-1711134837 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/elemento.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/elemento.h
 
 1711226667 source:c:\users\luana teles\documents\github\6-nimmt-in-c\src\fila_dinamica.c
 	"fila_dinamica.h"
@@ -187,14 +187,14 @@
 	<stdlib.h>
 	"fila_dinamica.h"
 
-1711340837 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.c
+1711342893 source:/home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.c
 	"gameLogic.h"
 	<stdio.h>
 	<stdlib.h>
 	"fila_dinamica.h"
 	<time.h>
 
-1711339703 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.h
+1711342499 /home/nerton/.local/share/distrobox/6-nimmt-in-C/src/gameLogic.h
 	"fila_dinamica.h"
 	"lista_dinamica.h"
 	"pilha_dinamica.h"

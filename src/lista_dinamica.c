@@ -59,23 +59,16 @@ int inserirOrdenado(Lista* hand, Carta nova){
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){
     if (!hand || indice < 0){
-        printf("Invalid Number");
         return 0;
     }
     int i = 0;
-    if(!indice){
-        *carta = hand->ini->data;
-        return 1;
-    }
-    Elemento ant = NULL;
     Elemento aux = hand->ini;
     while (aux && i < indice){
-        ant = aux;
         aux = aux->prx;
         i++;
     }
     if (aux){
-        *carta = ant->prx->data;
+        *carta = aux->data;
         return 1;
     }
     return 0;

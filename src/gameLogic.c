@@ -86,16 +86,16 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
             insert = i;
         }
     }
-    tam = filaTamanho(mesa[insert]);
     if(insert != -1){
+        tam = filaTamanho(mesa[insert]);
+        if (mesa[insert])
+            filaInserir(mesa[insert], cartaPtr);
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert], &cartaPtr2);
                 inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
             }
         }
-        if (mesa[insert])
-            filaInserir(mesa[insert], cartaPtr);
         return;
     }
     if (!cartaPtr.player){
