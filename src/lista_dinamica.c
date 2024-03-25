@@ -19,46 +19,48 @@ Lista* listaCriar(){
 };
 
 int inserirOrdenado(Lista* hand, Carta nova){
-    // Alocando o Novo Elemento
-        Elemento novo = (Elemento) malloc(sizeof(struct elemento));
-        if (!novo)
-            return 0;
-        novo->data = nova;
-        novo->prx = NULL;
-    //Caso de Primeiro Elemento
-        if (!hand->ini || nova.num < hand->ini->data.num){
-            novo->prx = hand->ini;
-            hand->ini = novo;
-            if (!hand->fim)
-                hand->fim = novo;
+        if (hand){
+        // Alocando o Novo Elemento
+            Elemento novo = (Elemento) malloc(sizeof(struct elemento));
+            if (!novo)
+                return 0;
+            novo->data = nova;
+            novo->prx = NULL;
+        //Caso de Primeiro Elemento
+            if (!hand->ini || hand->ini->data.num > nova.num){
+                novo->prx = hand->ini;
+                hand->ini = novo;
+                if (!hand->fim)
+                    hand->fim = novo;
+                hand->qtd++;
+                return 1;
+            }
+            // Procurando a Posição correta de inserção
+            Elemento tmp = hand->ini;
+            Elemento ant = NULL;
+            while (tmp && tmp->data.num < novo->data.num && tmp->data.num != novo->data.num){
+                ant = tmp;
+                tmp = tmp->prx;
+            }
+            if (tmp && tmp->data.num == novo->data.num) {
+                free(novo);
+                return 0; // Erro ou não inserir
+            }
             hand->qtd++;
+            ant->prx = novo;
+            novo->prx = tmp;
+            //Caso ultimo elemento
+            if (!tmp)
+                hand->fim = novo;
             return 1;
         }
-        // Procurando a Posição correta de inserção
-        Elemento tmp = hand->ini;
-        Elemento ant = NULL;
-        while (tmp && tmp->data.num < novo->data.num && tmp->data.num != novo->data.num){
-            //(tmp && tmp->data.num < novo->data.num){
-            ant = tmp;
-            tmp = tmp->prx;
-        }
-        if (tmp && tmp->data.num == novo->data.num) {
-            free(novo);
-            return 0; // Erro ou não inserir
-        }
-        hand->qtd++;
-        ant->prx = novo;
-        novo->prx = tmp;
-        //Caso ultimo elemento
-        if (!tmp)
-            hand->fim = novo;
-        return 1;
+        return 0;
 };
 
 int acessarIndice(Lista* hand, int indice, Carta* carta){
     if (!hand || indice < 0){
-        return 0;
         printf("Invalid Number");
+        return 0;
     }
     int i = 0;
     if(!indice){

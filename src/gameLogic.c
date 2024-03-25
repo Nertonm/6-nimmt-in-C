@@ -73,17 +73,15 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     printf("Your Colection:\nHand:");
     exibir(baralhoJogadores[0]);
-    exibir(baralhoJogadores[1]);
-    //exibir(baralhoJogadores[2]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista** pontosJogadores){
+void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** pontosJogadores){
     int insert = -1, selec = 104, tam;
     Carta cartaPtr2;
     for (int i = 0; i < numMesa; i++){
         tam = filaTamanho(mesa[i]);
         filaAcessar(mesa[i],&cartaPtr2);
-        int dif = abs(cartaPtr->num - cartaPtr2.num);
-        if(dif < selec && cartaPtr->num > cartaPtr2.num){
+        int dif = abs(cartaPtr.num - cartaPtr2.num);
+        if(dif < selec && cartaPtr.num > cartaPtr2.num){
             selec = dif;
             insert = i;
         }
@@ -93,14 +91,14 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista**
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert], &cartaPtr2);
-                inserirOrdenado(pontosJogadores[cartaPtr->player], cartaPtr2);
+                inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
             }
         }
         if (mesa[insert])
-            filaInserir(mesa[insert], *cartaPtr);
+            filaInserir(mesa[insert], cartaPtr);
         return;
     }
-    if (!cartaPtr->player){
+    if (!cartaPtr.player){
         do{
             printf("========================================\n");
             printf("|           Qual Fila puxar  ?         |\n");
@@ -111,11 +109,11 @@ void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista**
     }else{
         insert = (rand() % 4);
     }
-    for(int i = 0; i < tam; i++){
+    for(int bbb = 0; bbb < tam; bbb++){
         filaRemover(mesa[insert], &cartaPtr2);
-        inserirOrdenado(pontosJogadores[i], cartaPtr2);
+        inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
     }
-    filaInserir(mesa[insert], *cartaPtr);
+    filaInserir(mesa[insert], cartaPtr);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
@@ -128,7 +126,6 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
         // Printing
         printMesa(mesa, numMesa);
         printMao(baralhoJogadores);
-
         // Rounds
             // Player Choice
             selec = 0;
@@ -145,7 +142,6 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 cartaPtr.player = 0;
                 inserirOrdenado(ordemCartas,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                //insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[0]);
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
                 printf("========================================\n");
@@ -157,13 +153,12 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                         cartaPtr.player = j;
                         inserirOrdenado(ordemCartas,cartaPtr);
                         removerIndince(baralhoJogadores[j],selec);
-                        //insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[i]);
                 }
                 Carta cartaPtr2;
                 for (int v = 0; v < numPlayers; v++){
                     acessarIndice(ordemCartas, 0, &cartaPtr2);
                     removerIndince(ordemCartas, 0);
-                    insertMesa(mesa,&cartaPtr2,numMesa,isPlayer,pontosJogadores);
+                    insertMesa(mesa, cartaPtr2, numMesa, isPlayer, pontosJogadores);
                 }
     }
 };
