@@ -9,24 +9,24 @@ int msgIni(){
     // Selecionando o Numero de Jogadores
         int numPlayers = 2;
         do {
-            printf(" 1.@                                                                  \n");
-            printf(" 1 #@#          .::@@@@-           *+                                 \n");
-            printf(" 1  *@@@#-  -=-:    -+# +@+          #@.                              \n");
-            printf(" 1    .@@@@@@@@@           :@*         @@-                            \n");
-            printf(" 1       *@@@@@@-             #@#+.  :@@@@                            \n");
-            printf(" 1      =@  .-##   :*           . @@@@@@@*                            \n");
-            printf(" 1   .@-       -#@-             :@@@@@@                               \n");
-            printf(" 1  +@      *#       @@@.        @@                                   \n");
-            printf(" 1 @@       #         @ +@       @=                                   \n");
-            printf(" 1  =@@    ::     :    @@@@     .@#                                   \n");
-            printf(" 1    #@.   =     #        .      =@                                  \n");
-            printf(" 1     :@.  =     @        =       :@-                                \n");
-            printf(" 1       @# :=   =@              +*.:@@#                              \n");
-            printf(" 1         -@#=   :#.          *-       @=                            \n");
-            printf(" 1           +@@+       :   +:  -@  *@.-@.                            \n");
-            printf(" 1             : -*@@@#=:  ##  =  @:  .-@                             \n");
-            printf(" 1                       -#@@   :     -@                              \n");
-            printf(" 1                          @@@@@@@@@@#                               \n");
+            printf(".@                                      \n");
+            printf(" #@#          .::@@@@-           *+     \n");
+            printf("  *@@@#-  -=-:    -+# +@+          #@.  \n");
+            printf("    .@@@@@@@@@           :@*         @@-\n");
+            printf("       *@@@@@@-             #@#+.  :@@@@\n");
+            printf("      =@  .-##   :*           . @@@@@@@*\n");
+            printf("   .@-       -#@-             :@@@@@@   \n");
+            printf("  +@      *#       @@@.        @@       \n");
+            printf(" @@       #         @ +@       @=       \n");
+            printf("  =@@    ::     :    @@@@     .@#       \n");
+            printf("    #@.   =     #        .      =@      \n");
+            printf("     :@.  =     @        =       :@-    \n");
+            printf("       @# :=   =@              +*.:@@#  \n");
+            printf("         -@#=   :#.          *-       @=\n");
+            printf("           +@@+       :   +:  -@  *@.-@.\n");
+            printf("             : -*@@@#=:  ##  =  @:  .-@ \n");
+            printf("                       -#@@   :     -@  \n");
+            printf("                          @@@@@@@@@@#   \n");
             printf("========================================\n");
             if (numPlayers < 2 || numPlayers > 10)
                 printf("|           Selecione Novamente        |\n");
@@ -56,13 +56,11 @@ void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers, Lista
 void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         for (int i = 0; i < numMesa; i++)
             mesa[i] = filaCriar();
-        Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
+        Carta cartaPtr;
         for (int i = 0; i < numMesa ; i++){
-                pilhaRemover(monteCartas, cartaPtr);
-                Carta puxada = *cartaPtr;
-                filaInserir(mesa[i], puxada);
+                pilhaRemover(monteCartas, &cartaPtr);
+                filaInserir(mesa[i], cartaPtr);
         }
-        free(cartaPtr);
 };
 void printMesa(struct fila **mesa, int numMesa){
     numMesa = 4;
@@ -75,56 +73,57 @@ void printMesa(struct fila **mesa, int numMesa){
 void printMao(struct lista** baralhoJogadores){
     printf("Your Colection:\nHand:");
     exibir(baralhoJogadores[0]);
+    exibir(baralhoJogadores[1]);
+    //exibir(baralhoJogadores[2]);
 };
-void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista* pontosJogadores){
+void insertMesa(Fila** mesa, Carta* cartaPtr, int numMesa, int isPlayer, Lista** pontosJogadores){
     int insert = -1, selec = 104, tam;
-    Carta cartaAux = *cartaPtr;
+    Carta cartaPtr2;
     for (int i = 0; i < numMesa; i++){
-        filaAcessar(mesa[i],cartaPtr);
-        int dif = abs(cartaAux.num - cartaPtr->num);
-        if(dif < selec && cartaAux.num > cartaPtr->num){
+        tam = filaTamanho(mesa[i]);
+        filaAcessar(mesa[i],&cartaPtr2);
+        int dif = abs(cartaPtr->num - cartaPtr2.num);
+        if(dif < selec && cartaPtr->num > cartaPtr2.num){
             selec = dif;
             insert = i;
-            tam = filaTamanho(mesa[i]);
         }
     }
+    tam = filaTamanho(mesa[insert]);
     if(insert != -1){
         if (tam == 5){
             for(int i = 0; i < tam; i++){
-                filaRemover(mesa[insert],cartaPtr);
-                inserirOrdenado(pontosJogadores, *cartaPtr);
+                filaRemover(mesa[insert], &cartaPtr2);
+                inserirOrdenado(pontosJogadores[cartaPtr->player], cartaPtr2);
             }
         }
-        if (mesa)
-            filaInserir(mesa[insert], cartaAux);
+        if (mesa[insert])
+            filaInserir(mesa[insert], *cartaPtr);
         return;
     }
-    if (isPlayer){
-    do{
-        printf("========================================\n");
-        printf("|           Qual Fila puxar  ?         |\n");
-        printf("========================================\n");
-        scanf("%i",&insert);
-    } while (insert < 1|| insert > 4);
-    insert--;
+    if (!cartaPtr->player){
+        do{
+            printf("========================================\n");
+            printf("|           Qual Fila puxar  ?         |\n");
+            printf("========================================\n");
+            scanf("%i",&insert);
+        } while (insert < 1|| insert > 4);
+        insert--;
     }else{
         insert = (rand() % 4);
     }
-    // FALTA AS VERIFICAções
-    tam = filaTamanho(mesa[insert]);
     for(int i = 0; i < tam; i++){
-        filaRemover(mesa[insert],cartaPtr);
-        inserirOrdenado(pontosJogadores, *cartaPtr);
+        filaRemover(mesa[insert], &cartaPtr2);
+        inserirOrdenado(pontosJogadores[i], cartaPtr2);
     }
-    filaInserir(mesa[insert], cartaAux);
+    filaInserir(mesa[insert], *cartaPtr);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
     srand(time(NULL));
     int selec, isPlayer;
-    Carta *cartaPtr = (Carta*)malloc(sizeof(Carta));
+    Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
-    for (int i = 0; i < 10; i++){
+    for (int aaa = 0; aaa < 10; aaa++){
         isPlayer = 1;
         // Printing
         printMesa(mesa, numMesa);
@@ -139,28 +138,33 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 printf("|           Qual carta jogar ?         |\n");
                 printf("========================================\n");
                 scanf("%i",&selec);
-            }while (selec < 1 || selec > 10);
+            }while (selec < 1 || selec > 10 - aaa);
             selec--;
             // Player
-                acessarIndice(baralhoJogadores[0],selec,cartaPtr);
-                cartaPtr->player = 0;
+                acessarIndice(baralhoJogadores[0],selec,&cartaPtr);
+                cartaPtr.player = 0;
+                inserirOrdenado(ordemCartas,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                inserirOrdenado(ordemCartas,*cartaPtr);
-                insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[0]);
+                //insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[0]);
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
                 printf("========================================\n");
             // Bots
                 isPlayer = 0;
-                for (int i = 1; i < numPlayers; i++){
-                        selec = (rand() % 10) + 1 - i;
-                        acessarIndice(baralhoJogadores[i],selec,cartaPtr);
-                        cartaPtr->player = i;
-                        inserirOrdenado(ordemCartas,*cartaPtr);
-                        removerIndince(baralhoJogadores[i],selec);
-                        insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[i]);
+                for (int j = 1; j < numPlayers; j++){
+                        selec = (rand() % 10 - aaa);
+                        acessarIndice(baralhoJogadores[j],selec,&cartaPtr);
+                        cartaPtr.player = j;
+                        inserirOrdenado(ordemCartas,cartaPtr);
+                        removerIndince(baralhoJogadores[j],selec);
+                        //insertMesa(mesa,cartaPtr,numMesa,isPlayer,pontosJogadores[i]);
                 }
-
+                Carta cartaPtr2;
+                for (int v = 0; v < numPlayers; v++){
+                    acessarIndice(ordemCartas, 0, &cartaPtr2);
+                    removerIndince(ordemCartas, 0);
+                    insertMesa(mesa,&cartaPtr2,numMesa,isPlayer,pontosJogadores);
+                }
     }
 };
 
