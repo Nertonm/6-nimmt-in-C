@@ -142,9 +142,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 cartaPtr.player = 0;
                 inserirOrdenado(ordemCartas,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                printf("========================================\n");
-                printf("|           Mesa apos jogadas          |\n");
-                printf("========================================\n");
+
             // Bots
                 isPlayer = 0;
                 for (int j = 1; j < numPlayers; j++){
@@ -155,11 +153,20 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                         removerIndince(baralhoJogadores[j],selec);
                 }
                 Carta cartaPtr2;
+                printf("========================================\n");
+                printf("CARTAS JOGADAS:\n");
+                printf("========================================\n");
+                exibir(ordemCartas);
+                printf("\n");
+                printf("========================================\n");
+                printf("|           Mesa apos jogadas          |\n");
+                printf("========================================\n");
                 for (int v = 0; v < numPlayers; v++){
                     acessarIndice(ordemCartas, 0, &cartaPtr2);
                     removerIndince(ordemCartas, 0);
                     insertMesa(mesa, cartaPtr2, numMesa, isPlayer, pontosJogadores);
                 }
+
     }
 };
 
