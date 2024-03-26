@@ -49,6 +49,7 @@ int pilhaTamamho(Pilha* baralho){
 };
 
 void pilhaEmbaralhar(Pilha* baralho){
+    srand(time(0));
     int cartas = 104;
     // Iniciando o Baralho
         for (int i = 0; i < cartas; i++){
