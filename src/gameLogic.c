@@ -118,7 +118,7 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
-    srand(time(time(0)));
+    srand(time(0));
     int selec, isPlayer,aaa;
     Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
