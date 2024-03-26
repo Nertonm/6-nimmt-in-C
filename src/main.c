@@ -86,7 +86,6 @@ int main()
             printf("%i",tamanho);
             return 0;
             */
-
             iniGame(baralhoJogadores, monteCartas, numPlayers, pontosJogadores);
         // Iniciando a mesa
             iniMesa(mesa,monteCartas,numMesa);
