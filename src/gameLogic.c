@@ -148,13 +148,13 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 for (int j = 1; j < numPlayers; j++){
                         selec = (rand() % 10 - aaa);
                         acessarIndice(baralhoJogadores[j],selec,&cartaPtr);
-                        cartaPtr.player = j;
+                        cartaPtr.player = 1;
                         inserirOrdenado(ordemCartas,cartaPtr);
                         removerIndince(baralhoJogadores[j],selec);
                 }
                 Carta cartaPtr2;
                 printf("========================================\n");
-                printf("CARTAS JOGADAS:\n");
+                printf("|           CARTAS JOGADAS:            |\n");
                 printf("========================================\n");
                 exibir(ordemCartas);
                 printf("\n");
