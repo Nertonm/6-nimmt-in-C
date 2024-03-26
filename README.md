@@ -2,8 +2,9 @@
 
 ## TO DO
     - Revist TAD and finish verifications
-    - Solve Mesa input order 
-    - Criar restrição para impedir que o jogador ponha uma carta que não existe
+    - Improve the game looks
+    - Re-do the documetation 
+    
 **Description**
 
 This project is a C implementation of the popular card game 6-Nimmt, also known as "Take 6!" or "6 Take." 
