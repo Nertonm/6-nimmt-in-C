@@ -118,10 +118,10 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
     srand(time(NULL));
-    int selec, isPlayer;
+    int selec, isPlayer,aaa;
     Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
-    for (int aaa = 0; aaa < 10; aaa++){
+    for ( aaa = 0; aaa < 10; aaa++){
         isPlayer = 1;
         // Printing
         printMesa(mesa, numMesa);
@@ -146,7 +146,8 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             // Bots
                 isPlayer = 0;
                 for (int j = 1; j < numPlayers; j++){
-                        selec = (rand() % 10 - aaa);
+                        do selec = ((rand() % 10) - aaa);
+                        while (selec < 0);
                         acessarIndice(baralhoJogadores[j],selec,&cartaPtr);
                         cartaPtr.player = 1;
                         inserirOrdenado(ordemCartas,cartaPtr);
