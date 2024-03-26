@@ -122,12 +122,15 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
     for(int r=0; r<10; r++){
-    for (int aaa = 0; aaa < 10; aaa++){
-        isPlayer = 1;
-        // Printing
-        printMesa(mesa, numMesa);
-        printMao(baralhoJogadores);
-        // Rounds
+        printf("========================================\n");
+        printf("|               ROUND %d               |\n",r+1);
+        printf("========================================\n");
+        for (int aaa = 0; aaa < 10; aaa++){
+            isPlayer = 1;
+            // Printing
+            printMesa(mesa, numMesa);
+            printMao(baralhoJogadores);
+            // Rounds
             // Player Choice
             selec = 0;
             do{
@@ -143,9 +146,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 cartaPtr.player = 0;
                 inserirOrdenado(ordemCartas,cartaPtr);
                 removerIndince(baralhoJogadores[0],selec);
-                printf("========================================\n");
-                printf("|           Mesa apos jogadas          |\n");
-                printf("========================================\n");
+
             // Bots
                 isPlayer = 0;
                 for (int j = 1; j < numPlayers; j++){
@@ -157,9 +158,15 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 }
 
                 Carta cartaPtr2;
-                printf("CARTAS JOGADAS:\n");
+                printf("========================================\n");
+                printf("|           CARTAS JOGADAS:            |\n");
+                printf("========================================\n");
                 exibir(ordemCartas);
                 printf("\n");
+                printf("\n");
+                printf("========================================\n");
+                printf("|           Mesa apos jogadas          |\n");
+                printf("========================================\n");
                 for (int v = 0; v < numPlayers; v++){
                     acessarIndice(ordemCartas, 0, &cartaPtr2);
                     removerIndince(ordemCartas, 0);
