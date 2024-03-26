@@ -109,6 +109,7 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
     }else{
         insert = (rand() % 4);
     }
+    tam = filaTamanho(mesa[insert]);
     for(int bbb = 0; bbb < tam; bbb++){
         filaRemover(mesa[insert], &cartaPtr2);
         inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
