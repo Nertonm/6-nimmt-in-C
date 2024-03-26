@@ -90,7 +90,7 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
         tam = filaTamanho(mesa[insert]);
         if (mesa[insert])
             filaInserir(mesa[insert], cartaPtr);
-        if (tam == 5){
+        if (tam == 4){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert], &cartaPtr2);
                 inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
@@ -121,6 +121,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     int selec, isPlayer;
     Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
+    for(int r=0; r<10; r++){
     for (int aaa = 0; aaa < 10; aaa++){
         isPlayer = 1;
         // Printing
@@ -154,12 +155,18 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                         inserirOrdenado(ordemCartas,cartaPtr);
                         removerIndince(baralhoJogadores[j],selec);
                 }
+
                 Carta cartaPtr2;
+                printf("CARTAS JOGADAS:\n");
+                exibir(ordemCartas);
+                printf("\n");
                 for (int v = 0; v < numPlayers; v++){
                     acessarIndice(ordemCartas, 0, &cartaPtr2);
                     removerIndince(ordemCartas, 0);
                     insertMesa(mesa, cartaPtr2, numMesa, isPlayer, pontosJogadores);
                 }
+        }
+
     }
 };
 
