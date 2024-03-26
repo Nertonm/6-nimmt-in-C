@@ -121,10 +121,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
     int selec, isPlayer;
     Carta cartaPtr;
     Lista *ordemCartas = listaCriar();
-    for(int r=0; r<10; r++){
-        printf("========================================\n");
-        printf("|               ROUND %d               |\n",r+1);
-        printf("========================================\n");
+
         for (int aaa = 0; aaa < 10; aaa++){
             isPlayer = 1;
             // Printing
@@ -174,7 +171,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 }
         }
 
-    }
+
 };
 
 void endGame(Lista** pontosJogadores, int numPlayers){
