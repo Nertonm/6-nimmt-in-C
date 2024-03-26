@@ -86,12 +86,16 @@ int main()
             printf("%i",tamanho);
             return 0;
             */
-
+            for(int r=0; r<10; r++){
+        printf("========================================\n");
+        printf("|               ROUND %d               |\n",r+1);
+        printf("========================================\n");
             iniGame(baralhoJogadores, monteCartas, numPlayers, pontosJogadores);
         // Iniciando a mesa
             iniMesa(mesa,monteCartas,numMesa);
         // Loop do Jogo
             loopGame(baralhoJogadores,monteCartas,mesa,numMesa, numPlayers,pontosJogadores);
+            }
         // Contagem de Pontos   |TO DO|
             endGame(pontosJogadores, numPlayers);
         // Checagem de Vitoria  |TO DO|
