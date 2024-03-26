@@ -150,7 +150,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                         do selec = ((rand() % 10) - aaa);
                         while (selec < 0);
                         acessarIndice(baralhoJogadores[j],selec,&cartaPtr);
-                        cartaPtr.player = 1;
+                        cartaPtr.player = j;
                         inserirOrdenado(ordemCartas,cartaPtr);
                         removerIndince(baralhoJogadores[j],selec);
                 }
@@ -174,6 +174,8 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
 
 void endGame(Lista** pontosJogadores, int numPlayers){
     for (int i = 0; i < numPlayers; i++){
+        printf("JOGADOR %d:\n",i+1);
         exibir(pontosJogadores[i]);
+        printf("\n");
     }
 }
