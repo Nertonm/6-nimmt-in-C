@@ -187,8 +187,8 @@ void endGame(Lista** pontosJogadores, int numPlayers){
     }
 }
 
-int countPoints(Lista* pontosJogadores){ 
-    int sum,tam; 
+int countPoints(Lista* pontosJogadores){
+    int sum,tam;
     Carta carta;
     tam = quantidade(pontosJogadores);
     Lista* aux = pontosJogadores;
