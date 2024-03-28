@@ -32,7 +32,7 @@ int msgIni(){
                 printf("|           Selecione Novamente        |\n");
             printf("|           Quantos Jogadores?         |\n");
             printf("========================================\n");
-            scanf("%i",&numPlayers);
+            scanf("%i", &numPlayers);
         } while (numPlayers < 2 || numPlayers > 10);
         return numPlayers;
 };
@@ -53,6 +53,7 @@ void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers, Lista
                 }
             }
 };
+
 void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
         for (int i = 0; i < numMesa; i++)
             mesa[i] = filaCriar();
@@ -62,6 +63,7 @@ void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
                 filaInserir(mesa[i], cartaPtr);
         }
 };
+
 void printMesa(struct fila **mesa, int numMesa){
     numMesa = 4;
     for (int i = 0; i < numMesa; i++){
@@ -70,10 +72,12 @@ void printMesa(struct fila **mesa, int numMesa){
     }
     return;
 };
+
 void printMao(struct lista** baralhoJogadores){
     printf("Your Colection:\nHand:");
     exibir(baralhoJogadores[0]);
 };
+
 void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** pontosJogadores){
     int insert = -1, selec = 104, tam;
     Carta cartaPtr2;
@@ -118,15 +122,15 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
-    srand(time(0));
-    int selec, isPlayer,aaa;
-    Carta cartaPtr;
-    Lista *ordemCartas = listaCriar();
-    for ( aaa = 0; aaa < 10; aaa++){
-        isPlayer = 1;
+        srand(time(0));
+        int selec, isPlayer,aaa;
+        Carta cartaPtr;
+        Lista *ordemCartas = listaCriar();
+        for ( aaa = 0; aaa < 10; aaa++){
+            isPlayer = 1;
         // Printing
-        printMesa(mesa, numMesa);
-        printMao(baralhoJogadores);
+            printMesa(mesa, numMesa);
+            printMao(baralhoJogadores);
         // Rounds
             // Player Choice
             selec = 0;
@@ -159,6 +163,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                 printf("|           CARTAS JOGADAS:            |\n");
                 printf("========================================\n");
                 exibir(ordemCartas);
+                sleep(2);
                 printf("\n");
                 printf("========================================\n");
                 printf("|           Mesa apos jogadas          |\n");
@@ -168,14 +173,28 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
                     removerIndince(ordemCartas, 0);
                     insertMesa(mesa, cartaPtr2, numMesa, isPlayer, pontosJogadores);
                 }
-
-    }
+        }
 };
 
 void endGame(Lista** pontosJogadores, int numPlayers){
     for (int i = 0; i < numPlayers; i++){
-        printf("JOGADOR %d:\n",i+1);
+        printf("JOGADOR %d: ",i+1);
+        int points = countPoints(pontosJogadores[i]);
+        printf("%i pontos\n    ",points);
+        sleep(2);
         exibir(pontosJogadores[i]);
         printf("\n");
     }
+}
+
+int countPoints(Lista* pontosJogadores){ 
+    int sum,tam; 
+    Carta carta;
+    tam = quantidade(pontosJogadores);
+    Lista* aux = pontosJogadores;
+    for (int i = 0; i < tam; i++){
+        acessarIndice(pontosJogadores, i, &carta);
+        sum += carta.boi;
+    }
+    return sum;
 }
