@@ -38,7 +38,7 @@ int msgIni(){
 };
 
 void iniGame(Lista* baralhoJogadores[],Pilha* monteCartas, int numPlayers, Lista* pontosJogadores[]){
-    // Declaração de Variaveis
+    // Declaração de Variaveis:
             int cartasInicias = 10; /* Numero de Cartas a serem puxadas no Inicio */
             Carta carta;
     // Inicialização do Jogo
@@ -78,7 +78,7 @@ int countPoints(Lista* pontosJogadores){
 
 void printMesa(struct fila **mesa, int numMesa){
     numMesa = 4;
-    sleep(2);
+    // sleep(2);
     for (int i = 0; i < numMesa; i++){
          filaExibir(mesa[i]);
          printf("\n");
@@ -151,9 +151,13 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             isPlayer = 1;
         // Printing
             printf("\n");
-            system("cls");
-            system("clear");
+            //system("cls");
+            //system("clear");
+            printf("========================================\n");
+            printf("|                  Mesa                |\n");
+            printf("========================================\n");
             printMesa(mesa, numMesa);
+            printf("\n");
             printMao(baralhoJogadores);
         // Rounds
             // Player Choice
@@ -202,7 +206,7 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
 
 void endGame(Lista** pontosJogadores, int numPlayers){
     for (int i = 0; i < numPlayers; i++){
-        printf("JOGADOR %d: ",i+1);
+        printf("JOGADOR %d: ", i+1);
         int points = countPoints(pontosJogadores[i]);
         printf("%i pontos\n    ",points);
         sleep(1);

@@ -115,13 +115,7 @@ int exibir(Lista* hand){
 
 int quantidade(Lista* hand){
     if(hand){
-        int count=0;
-        Elemento aux= hand->ini;
-        while(aux){
-            count++;
-            aux=aux->prx;
-        }
-        return count;
+        return hand->qtd;
     }
     return 0;
 }
