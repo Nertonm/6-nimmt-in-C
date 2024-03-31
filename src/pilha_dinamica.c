@@ -1,6 +1,7 @@
 #include "pilha_dinamica.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 struct pilha{
     struct elemento *top;
@@ -73,5 +74,4 @@ void pilhaEmbaralhar(Pilha* baralho){
             aux->data = aux2->data;
             aux2->data = swp;
         }
-
 };
