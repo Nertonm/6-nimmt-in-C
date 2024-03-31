@@ -78,9 +78,9 @@ int countPoints(Lista* pontosJogadores){
 
 void printMesa(struct fila **mesa, int numMesa){
     numMesa = 4;
+    sleep(2);
     for (int i = 0; i < numMesa; i++){
          filaExibir(mesa[i]);
-         sleep(1);
          printf("\n");
     }
     return;
@@ -88,7 +88,6 @@ void printMesa(struct fila **mesa, int numMesa){
 
 void printMao(struct lista** baralhoJogadores){
     printf("Your Colection:\nHand:");
-    sleep(1);
     exibir(baralhoJogadores[0]);
 };
 
@@ -108,14 +107,20 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
         tam = filaTamanho(mesa[insert]);
         if (mesa[insert])
             filaInserir(mesa[insert], cartaPtr);
+            printf("\n");
+            printMesa(mesa, numMesa);
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert], &cartaPtr2);
-                inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
+                inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);            
+                printf("\n");
+                printMesa(mesa, numMesa);
             }
         }
         return;
     }
+    printf("\n");
+    printMesa(mesa, numMesa);
     if (!cartaPtr.player){
         do{
             printf("========================================\n");
@@ -133,6 +138,8 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
         inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
     }
     filaInserir(mesa[insert], cartaPtr);
+    printf("\n");
+    printMesa(mesa, numMesa);
 };
 void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int numMesa, int numPlayers, Lista** pontosJogadores){
      // Round Logic
@@ -143,6 +150,9 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
         for ( aaa = 0; aaa < 10; aaa++){
             isPlayer = 1;
         // Printing
+            printf("\n");
+            system("cls");
+            system("clear");
             printMesa(mesa, numMesa);
             printMao(baralhoJogadores);
         // Rounds
