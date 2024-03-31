@@ -65,7 +65,8 @@ void iniMesa(Fila** mesa, Pilha* monteCartas, int numMesa){
 };
 
 int countPoints(Lista* pontosJogadores){
-    int sum,tam;
+    int sum=0;
+    int tam;
     Carta carta;
     tam = quantidade(pontosJogadores);
     Lista* aux = pontosJogadores;
@@ -78,7 +79,7 @@ int countPoints(Lista* pontosJogadores){
 
 void printMesa(struct fila **mesa, int numMesa){
     numMesa = 4;
-    // sleep(2);
+     sleep(2);
     for (int i = 0; i < numMesa; i++){
          filaExibir(mesa[i]);
          printf("\n");
@@ -112,7 +113,7 @@ void insertMesa(Fila** mesa, Carta cartaPtr, int numMesa, int isPlayer, Lista** 
         if (tam == 5){
             for(int i = 0; i < tam; i++){
                 filaRemover(mesa[insert], &cartaPtr2);
-                inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);            
+                inserirOrdenado(pontosJogadores[cartaPtr.player], cartaPtr2);
                 printf("\n");
                 printMesa(mesa, numMesa);
             }
@@ -151,8 +152,8 @@ void loopGame(Lista** baralhoJogadores, Pilha* monteCartas, Fila** mesa, int num
             isPlayer = 1;
         // Printing
             printf("\n");
-            //system("cls");
-            //system("clear");
+            system("clear");
+            system("cls");
             printf("========================================\n");
             printf("|                  Mesa                |\n");
             printf("========================================\n");
