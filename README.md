@@ -1,10 +1,5 @@
 # 6-nimmt-in-C
 
-## TO DO
-    - Revist TAD and finish verifications
-    - Improve the game looks
-    - Re-do the documetation 
-    
 **Description**
 
 This project is a C implementation of the popular card game 6-Nimmt, also known as "Take 6!" or "6 Take." 
